@@ -1,0 +1,3704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ST. FRANCIS' CONVENT INTER COLLEGE | POWERED BY: TELEIOS INFOTECH</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body style="background-color:whitesmoke">
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <!--<div class="spinner-border position-relative text-primary" style="width: 6rem; height: 6rem;" role="status"></div>-->
+        <!--<i class="fa fa-laptop-code fa-2x text-primary position-absolute top-50 start-50 translate-middle"></i>-->
+        <img class=" fa-2xposition-absolute top-50 start-50 translate-middle" src="img/logosfs.png" style="width:150px;height:100px" />
+        <!--<img class=" fa-2xposition-absolute top-50 start-50 translate-middle" src="img/logosfs.png" style="width:100px;height:100px" />-->
+
+    </div>
+    <!-- Spinner End -->
+    <!-- POP UP START  -->
+
+    <style>
+
+
+
+        .main {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            /* background: rgba(0,0,0, 0.6);*/
+            background: rgb(5, 4, 4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+            .main button {
+                width: 40px;
+                height: 40px;
+                border: none;
+                border-radius: 5px;
+            }
+
+        .buttons {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popDiv {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 65%;
+            height: 100vh;
+            perspective: 1000px; /* Enable 3D perspective */
+        }
+
+            .popDiv div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 3px;
+            }
+
+        .popups {
+            position: absolute;
+            /*top: 0;*/
+            left: 50%;
+            transform-style: preserve-3d;
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease;
+            width: 50vw;
+            transform: translateX(-50%);
+            /*cursor: pointer;*/
+        }
+
+            .popups img {
+                width: 100%;
+                height: 90vh;
+                object-fit: contain;
+                border-radius: 5px;
+            }
+
+        #closeBtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: red;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+        }
+
+        .no-scroll {
+            overflow-y: hidden;
+        }
+
+        .popups.active {
+            transform: translateX(-50%) scale(1.1);
+            opacity: 1;
+            z-index: 3;
+        }
+
+        .popups.prev {
+            transform: translateX(-70%) scale(0.9);
+            opacity: 0;
+            z-index: 2;
+            filter: blur(5px);
+            transition: ease-out 0.8s;
+            /*transition: filter 0.3s, opacity 0.3s;*/
+        }
+
+        .popups.next {
+            transform: translateX(-30%) scale(0.9);
+            opacity: 0;
+            z-index: 2;
+            filter: blur(5px);
+            transition: ease-in 0.8s;
+            /* transition:filter 0.3s, opacity 0.3s;*/
+        }
+
+        .popDiv::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .popDiv.no-siblings .popups:not(.active) {
+            display: none;
+        }
+
+        #quote {
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Agency FB', Arial, sans-serif;
+            font-size: 23px;
+        }
+
+       /* #phoneMailContainer {
+            gap: 30px;
+            display: flex;
+            width: 40%;
+            justify-content: start;
+            align-items: center;
+        }*/
+
+        .noticeContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        @media (max-width:500px) {
+            .main {
+                /* height:80vh;*/
+                align-items: start;
+            }
+
+            .popDiv {
+                height: 65vh;
+            }
+
+
+            .main button {
+                width: 30px;
+                height: 30px;
+            }
+
+            .buttons {
+                height: 65vh;
+            }
+
+
+
+            #closeBtn {
+                right: 3%;
+                top: 10%;
+            }
+
+            .popups {
+                left: 5%;
+                width: 60vw;
+                align-content: start;
+            }
+
+                .popups img {
+                    height: 100%;
+                }
+
+            .popDiv .popups:not(.active) {
+                display: none;
+            }
+
+            .popDiv .popups.active {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            #quote {
+                font-size: 18px;
+            }
+        }
+
+
+        @media(max-width:390px) {
+            #closeBtn {
+                top: 3%;
+            }
+        }
+
+
+        @media(max-width:290px) {
+
+            .main {
+                /* height:80vh;*/
+                justify-content: space-around;
+                /* align-content:start;*/
+            }
+
+            #closeBtn {
+                top: 17%;
+            }
+
+            .popDiv {
+                height: 95vh;
+                /*border:2px solid red;*/
+            }
+
+            .buttons {
+                height: 95vh;
+            }
+
+            .popups img {
+                height: 100%;
+                width: 70vw;
+            }
+        }
+    </style>
+
+    <!--<a class="service-item d-block rounded  h-100 p-4" href="Celebrating_Life-Principal's_Day_Celebration.html">
+        <img class="img-fluid rounded mb-4" src="cover-images\Celebrating_Life_Principal_Day.jpg" style="width:500px;height:200px" alt="">
+        <h5 class="text-center text-primary pe-3" style="font-size:14px; font-weight:700;">Celebrating Life - Principal's Day Celebration on December 1</h5>-->
+    <!--<h4 class="mb-0">School Building</h4>-->
+    <!--</a>-->
+
+
+    <div class="main" id="mainPopupCtnr">
+
+        <div class="buttons"><button id="prev">&#10094;</button></div>
+
+        <div class="popDiv" id="popDiv">
+
+            <!--<div class="popups" id="popup18">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <!--<img src="img/popup/Summer_Camp_Poster.jpg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup20">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <!--<img src="img/X&XII_ExtraClasses.jpeg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>-->
+
+            <div class="popups" id="popup19">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <img src="img/Summer_Vacation.jpeg" alt="">
+                        <!-- </a>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="popups" id="popup18">
+            <div class="pop-content">
+                <div class="pop1">-->
+                    <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                    <!--<img src="img/popup/Labours_Day.jpg" alt="">-->
+                    <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>-->
+
+            <div class="popups" id="popup17">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <img src="img/School_toppers_24_25.jpg" alt="">
+                        <!-- </a>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup16">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <img src="img/ICSE_Toppers_24_25.jpg" alt="">
+                        <!-- </a>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup15">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <img src="img/ISC_Toppers_24_25.jpg" alt="">
+                        <!-- </a>-->
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--<div class="popups" id="popup14">
+    <div class="pop-content">
+        <div class="pop1">-->
+            <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+            <!--<img src="img/popup/Pope_Francis.png" alt="">-->
+            <!-- </a>-->
+            <!--</div>
+        </div>
+    </div>-->
+
+            <!--<div class="popups" id="popup13">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <!--<img src="img/UT-1-Exam-TT-Class-Nur-5th.jpg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup12">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <!--<img src="img/UT-1 Exam-TT-6th-12th.jpg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>-->
+
+            <!--<div class="popups" id="popup20">
+    <div class="pop-content">
+        <div class="pop1">-->
+            <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+            <!--<img src="img/popup/Happy_Mahavir_Jayanti.jpg" alt="">-->
+            <!-- </a>-->
+            <!--</div>
+        </div>
+    </div>-->
+
+            <!--<div class="popups" id="popup11">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/ParentsOrientation.jpeg">-->
+                        <!--<img src="img/popup/ParentsOrientation.jpeg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>-->
+
+            <div class="popups" id="popup10">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <!--<a target="_blank" href="/img/popup/Happy New Year 2025.png">-->
+                        <img src="img/Class-11-Admissions-Open.jpeg" alt="">
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="popups" id="popup9">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/Happy New Year 2025.png">-->
+                        <!--<img src="img/Class-11-Admission-List.jpg" alt="">-->
+                        <!--</a>-->
+                    <!--</div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup8">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/Exam_Result.jpeg">-->
+                        <!--<img src="img/Class_11_Admission.jpg" alt="">-->
+                        <!-- </a>-->
+                    <!--</div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup7">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/Happy New Year 2025.png">-->
+                        <!--<img src="img/popup/LKG Admision.jpeg" alt="">-->
+                        <!--</a>-->
+                    <!--</div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup6">
+                <div class="pop-content">
+                    <div class="pop1">-->
+                        <!--<a target="_blank" href="/img/popup/Happy New Year 2025.png">-->
+                        <!--<img src="img/popup/Nursery Admission.jpeg" alt="">-->
+                        <!--</a>-->
+                    <!--</div>
+                </div>
+            </div>-->
+
+            <div class="popups" id="popup5">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <img src="img/popup/Selection_of_Optional_Subject_for_Class_IX.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+           <!-- <div class="popups" id="popup4">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <img src="img/popup/Admission_LKG_Notice_2025-26.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="popups" id="popup3">
+                <div class="pop-content">
+                    <div class="pop1">
+                        <img src="img/popup/Admission_Play_Group_Notice_Nursery_2025-26.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- <div class="popups" id="popup2">
+        <div class="pop-content">
+            <div class="pop1">
+                <img src="img/popUp/ICSE Toppers 2023-24.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="popups" id="popup1">
+        <div class="pop-content">
+            <div class="pop1">
+                <img src="img/popUp/ISC Toppers 2023-24.jpg" alt="">
+            </div>
+        </div>
+    </div>-->
+
+            <button id="closeBtn">&#10006;</button>
+
+        </div>
+
+        <div class="buttons"><button id="next">&#10095;</button></div>
+
+    </div>
+
+
+    <script>
+            const mainPopupCtnr = document.getElementById('mainPopupCtnr');
+            const popDiv = document.getElementById('popDiv');
+            const popups = document.querySelectorAll('.popups');
+            const prevButton = document.getElementById('prev');
+            const nextButton = document.getElementById('next');
+            const closeButton = document.getElementById('closeBtn');
+
+            let currentpopup = 0;
+            //const specificImageIndex = [0,6];
+
+
+       //     const targetDate = "2024-12-25";
+      //      const today = new Date().toISOString().split('T')[0];
+      //      const popup12 = document.getElementById("popup12");
+
+      //          if (today === targetDate) {
+         //         popup12.style.display = "flex";
+         //       } else {
+          //        popup12.style.display = "none";
+
+          //     }
+
+
+        function updatepopups() {
+            popups.forEach((popup, index) => {
+            popup.classList.remove('active', 'prev', 'next');
+                if (index === currentpopup) {
+                    popup.classList.add('active');
+                    prevButton.disabled = index === 0;
+                    nextButton.disabled = index === popups.length-1;
+                 // if (specificImageIndex.includes(index)) {
+                     //      popDiv.classList.add("no-siblings");
+                     //  } else {
+                      //     popDiv.classList.remove("no-siblings");
+                      //  }
+                } else if (index === (currentpopup - 1 + popups.length) % popups.length) {
+                    popup.classList.add('prev');
+                } else if (index === (currentpopup + 1) % popups.length) {
+                    popup.classList.add('next');
+                }
+            });
+        }
+
+
+
+
+
+            prevButton.addEventListener('click', () => {
+                currentpopup = (currentpopup - 1 + popups.length) % popups.length;
+                updatepopups();
+            });
+
+            nextButton.addEventListener('click', () => {
+                currentpopup = (currentpopup + 1) % popups.length;
+                updatepopups();
+            });
+
+            closeButton.addEventListener('click', () => {
+                mainPopupCtnr.style.display = 'none';
+              enableScroll();
+            });
+
+
+
+
+
+
+            //function to close the popup after reaching the last index
+
+            function autoCloseSlideshow() {
+            const interval = setInterval(function () {
+                if (currentpopup === popups.length - 1) {
+                    clearInterval(interval);
+                    mainPopupCtnr.style.display = 'none';
+                    enableScroll();
+                } else {
+                    currentpopup++;
+                    updatepopups();
+                }
+            }, 15000);
+        }
+
+
+
+        function disableScroll() {
+            document.body.classList.add('no-scroll');
+        }
+
+        function enableScroll() {
+            document.body.classList.remove('no-scroll');
+        }
+
+            updatepopups();
+            disableScroll();
+            autoCloseSlideshow();
+
+
+
+    </script>
+
+    <!-- POP UP END -->
+
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="flex">
+                <a href="home.html">
+                    <img src="img/IndexLogo10.png" class="nav-logo" alt="Logo" />
+
+                </a>
+            </div>
+
+        </div>
+
+        <div id="phoneMailContainer">
+
+            <div class="col-lg-2 box d-flex align-items-center" id="SchoolPhoneNo">
+                <div class="d-flex align-items-center" style="padding-top: 5px;">
+                    <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                        <i class="fa fa-phone text-primary"></i>
+                    </div>
+                    <div class="ps-3">
+                        <p class="text-primary mb-2"><strong>Call Us </strong></p>
+                        <h6 class="mb-0" id="SchPhn">+91 7376338453<br />+91 94500 71734</h6>
+                    </div>
+                </div>
+                <!--<div class="row nav-logo2">
+
+                    <div class="flex  ">
+
+                        <h5>   <i class="fa fa-phone" style="font-size:28px;color:red"></i> Call US </h5>  <h5> <span class="text-primary">+91 7376338453<br />+91 94500 71734</span> </h5>
+                    </div>
+                </div>-->
+            </div>
+
+            <div class="d-flex align-items-center col-lg-3 box" id="SchoolMailId">
+                <div class="d-flex align-items-center " style="padding-top: 5px;">
+                    <div class="flex-shrink-0 btn-lg-square border rounded-circle">
+                        <i class="far fa-envelope text-primary"></i>
+                    </div>
+                    <div class="ps-3">
+                        <p class="text-primary mb-2"><strong>Email Us </strong></p>
+                        <h6 class="mb-0" id="SchMail">sfcicjhansi@gmail.com</h6>
+                    </div>
+                </div>
+                <!--<div class="row nav-logo2">
+
+                    <div class="flex ">
+                        <h5>   <i class="fa fa-envelope" style="font-size:28px;color:red"></i> Email </h5>  <h5> <span class="text-primary">sfcicjhansi@gmail.com</span> </h5>
+                    </div>
+                </div>-->
+            </div>
+
+        </div>
+
+
+
+        <div id="buttonContainer1">
+
+    <div class="col-lg-2 box" id="YtButton1">
+        <a href="https://youtube.com/@sfcicjhs?si=9OjvOCxwKZ-vN3pB" target="_blank">
+            <img src="img\youtube.png" alt="Youtube icon" id="youtubeImg"  />
+        </a>
+    </div>
+
+    <div class="col-lg-2 box" id="parentLoginBtn1">
+        <!-- <div class="d-flex align-items-center " style="padding-top: 5px;">-->
+        <a href="https://www.sfcjhs.in/" target="_blank" class="btn btn-primary " style="padding-top:5px;"> Parent Login</a>
+        <!--</div>-->&nbsp;
+    </div>
+
+</div>
+            
+            
+           
+        </div>
+
+    </div>
+
+
+    <!--<div class="col-lg-3">-->
+    <!--<a href="#"><img src="img/SBI-Button.GIF" class="nav-logo1"></a>-->
+    <!--<button class="btn btn-primary btn-sm  btn-lg float-right" style="width:25%;" onclick="window.open('https://www.sfcjhs.in/');"> Parent Login</button> &nbsp;
+
+        <a id="link" href="https://play.google.com/store/search?q=st%20francis%20jhansi&c=apps" target="_blank">
+
+            <img src="images/google_play.png" style=" height:80%; flex:auto;">
+            </a>
+        <a id="link" href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm" target="_blank">
+
+            <img src="img/SBI-Button.GIF" style="width:100%; height:50%; flex:auto;">
+        </a>
+
+    </div>-->
+    </div>
+
+
+    <div class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-3 wow fadeIn" data-wow-delay="0.1s">
+        <!--<img src="img/IndexLogo10.png" alt="Logo" style="align-items:center;width:400px;">-->
+
+        <div>
+            <!--<div class="Logocenter">-->
+            <!--</div>-->
+            <!--<nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">-->
+            <nav data-wow-delay="0.1s">
+                <a href="#" class="navbar-brand ms-3 d-lg-none">MENU</a>
+                <button type="button" class="navbar-toggler me-3" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav me-auto p-3 p-lg-0">
+                        <a href="home.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                            <!--<div class="dropdown-menu border-0 rounded-0rounded-0 rounded-bottom m-0">-->
+                            <div class="dropdown-menu ">
+                                <a href="OurPatron.html" class="dropdown-item">Our Patron</a>
+                                <a href="OurFoundress.html" class="dropdown-item">Our Foundress</a>
+                                <a href="Prayers.html" class="dropdown-item">Prayers/Hymns</a>
+                                <a href="ThePledge.html" class="dropdown-item">The Pledge</a>
+                                <a href="SchoolAnthem.html" class="dropdown-item">School Anthem</a>
+                                <a href="History.html" class="dropdown-item">History</a>
+                                <a href="OurMission.html" class="dropdown-item">Our Mission Our Vision</a>
+                                <!--<a href="LovingTribute.html" class="dropdown-item">A Loving Tribute</a>-->
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Messages</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="PrincipalMessage.html" class="dropdown-item">Principal's Message</a>
+                                <a href="ManagerMessage.html" class="dropdown-item">Manager's Message</a>
+                                <a href="HeadGirl.html" class="dropdown-item">Head Girl</a>
+
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Prospectus</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="Magazine.html" class="dropdown-item">Magazine</a>
+                                <a href="SchoolHours.html" class="dropdown-item">School Hours</a>
+                                <a href="OfficeHours.html" class="dropdown-item">Office Hours</a>
+                                <a href="Courses.html" class="dropdown-item">Courses</a>
+                                <a href="Promotions.html" class="dropdown-item">Promotions</a>
+                                <a href="Admission.html" class="dropdown-item">Admission</a>
+                            </div>
+                        </div>
+                        <!--<div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Prospectus</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="Magazine.html" class="dropdown-item">Magazine</a>
+                                <a href="SchoolHours.html" class="dropdown-item">School Hours</a>
+                                <a href="OfficeHours.html" class="dropdown-item">Office Hours</a>
+                                <a href="Courses.html" class="dropdown-item">Courses</a>
+                                <a href="Promotions.html" class="dropdown-item">Promotions</a>
+                                <a href="Admission.html" class="dropdown-item">Admission</a>
+                            </div>
+                        </div>-->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Rules</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="FEE_RULES.html" class="dropdown-item">Fee Rules</a>
+                                <a href="DISCIPLINE.html" class="dropdown-item">Discipline</a>
+                                <a href="RULES_OF_CONDUCT.html" class="dropdown-item">Rules Of Conduct</a>
+                                <a href="RULES_CONCERNING_ABSENCE.html" class="dropdown-item">Rules Concerning Absence</a>
+                                <a href="RECOMMENDATIONS_TO_PARENTS.html" class="dropdown-item">Recommendation To Guardians</a>
+                                <a href="Uniform.html" class="dropdown-item">Uniform</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Achievements</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="Achievements.html" class="dropdown-item">Achievements</a>
+                                <a href="ISCToppers.html" class="dropdown-item">ISC Toppers</a>
+                                <a href="ICSEToppers.html" class="dropdown-item">ICSE Toppers</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Office Bearers</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="InvestitureCer.html" class="dropdown-item">Investiture Ceremony</a>
+                                <a href="Principals.html" class="dropdown-item">Principals</a>
+                                <a href="Managers.html" class="dropdown-item">Managers</a>
+                                <a href="StaffPhotos.html" class="dropdown-item">Staff Photos</a>
+                                <a href="CabinetPhotos.html" class="dropdown-item">Cabinet Photos</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gallery</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="PhotoGallery.html" class="dropdown-item">Photo Gallery</a>
+                                <a href="VideoGallery.html" class="dropdown-item">Video Gallery</a>
+                                <!--<a href="SaintMedia.html" class="dropdown-item">Saint Francis Media</a>-->
+                                <a href="MediaGallery.html" class="dropdown-item">Media Gallery</a>
+                                <a href="BulletinBoard.html" class="dropdown-item">Bulletin Board</a>
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Notice Board</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="NoticeBoard.html" class="dropdown-item">Notice Board</a> <a href="Syllabus.html" class="dropdown-item">Syllabus</a>
+
+                            </div>
+                        </div>
+                        <!--<div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Diary Notes</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="DiaryNotes.html" class="dropdown-item">Diary Notes</a>
+
+                            </div>
+                        </div>-->
+
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Circulars</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="Circulars.html" class="dropdown-item">Circulars</a>
+
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">School Clubs</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="MediaClub.html" class="dropdown-item">Media Club</a>
+                                <a href="JPIC.html" class="dropdown-item">JPIC</a>
+                                <a href="USM.html" class="dropdown-item">USM</a>
+                                <a href="LTS.html" class="dropdown-item">LTS</a>
+                                <a href="LGL.html" class="dropdown-item">LGL</a>
+                                <a href="ECO.html" class="dropdown-item">ECO</a>
+                                <a href="SchoolClubs.html" class="dropdown-item">See more...</a>
+
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contact Us</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="ContactUs.html" class="dropdown-item">Contact Us</a>
+
+                            </div>
+                        </div>
+
+
+
+                       <div id="buttonContainer2">
+
+    <div class="nav-item" id="parentLoginBtn2">
+        <a href="https://www.sfcjhs.in/" target="_blank" class="btn btn-primary " style="padding-top:5px;">Parent Login</a>
+    </div>&nbsp;
+
+    <div class="col-lg-2 box" id="YtButton2">
+        <a href="https://youtube.com/@sfcicjhs?si=9OjvOCxwKZ-vN3pB" target="_blank">
+            <img src="img\youtube.png" alt="Youtube icon" id="youtubeImg"  />
+        </a>
+    </div>
+
+</div>
+                            
+                        
+
+
+                        <div>
+                            <a id="link" href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm" target="_blank">
+
+                                <img src="img/SBI-Button.GIF" style=" width:80%; height:100%; flex:auto;">
+                            </a>
+                        </div>
+
+                        <!--<a href="about.html" class="nav-item nav-link">About Us</a>-->
+                        <!--<a href="service.html" class="nav-item nav-link">Services</a>-->
+                        <!--<a href="project.html" class="nav-item nav-link">Projects</a>-->
+                        <!--<div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu border-0 rounded-0 rounded-bottom m-0">
+                                <a href="feature.html" class="dropdown-item">Features</a>
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>-->
+                        <!--<a href="contact.html" class="nav-item nav-link">Contact</a>-->
+                    </div>
+                    <!--<a href="#" class="btn btn-sm btn-light rounded-pill py-2 px-4 d-none d-lg-block">Get Started</a>-->
+
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+    <style>
+        .carousel-item img {
+            object-fit: cover;
+            aspect-ratio: 2.5;
+        }
+    </style>
+
+
+    <div id="QuoteContainer" style="margin:20px;">
+        <!-- <h2 class="text-primary" style="text-align:center; font-family:'Agency FB'">Quote of the Day</h2>-->
+        <div class="text-dark" id="quote">
+
+        </div>
+    </div>
+
+    <script>
+
+            const quotes = [
+                '"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela ',
+                ' "The beautiful thing about learning is that no one can take it away from you." – B.B. King ',
+                ' "The mind is not a vessel to be filled, but a fire to be kindled." – Plutarch '
+            ];
+
+            const date = new Date();
+            const index = date.getDate() % quotes.length;
+            document.getElementById("quote").innerText = quotes[index];
+
+    </script>
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                    <img class="img-fluid" src="img/Sider/carousel-01.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="1" aria-label="Slide 2">
+                    <img class="img-fluid" src="img/Sider/carousel-02.jpg" alt="Image">
+                </button>
+
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3">
+                    <img class="img-fluid" src="img/Sider/carousel-03_new.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="3" aria-label="Slide 4">
+                    <img class="img-fluid" src="img/Sider/carousel-04.jpg" alt="Image">
+                </button>
+
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="4" aria-label="Slide 5">
+                    <img class="img-fluid" src="img/Sider/New-Session.jpg" alt="Image">
+                </button>
+
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="5" aria-label="Slide 6">
+                    <img class="img-fluid" src="img/Sider/12th_Farewell.jpg" alt="Image">
+                </button>
+
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="6" aria-label="Slide 7">
+                    <img class="img-fluid" src="img/Sider/1.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="7" aria-label="Slide 8">
+                    <img class="img-fluid" src="img/Sider/2.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="8" aria-label="Slide 9">
+                    <img class="img-fluid" src="img/Sider/3.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="9" aria-label="Slide 10">
+                    <img class="img-fluid" src="img/Sider/4.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="10" aria-label="Slide 11">
+                    <img class="img-fluid" src="img/Sider/5.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="11" aria-label="Slide 12">
+                    <img class="img-fluid" src="img/Sider/6.jpg" alt="Image">
+                </button>
+                <!--<button type="button" data-bs-target="#header-carousel" data-bs-slide-to="2" aria-label="Slide 3">
+                    <img class="img-fluid" src="img/Sider/carousel-03_new.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="3" aria-label="Slide 4">
+                    <img class="img-fluid" src="img/Sider/carousel-04.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="4" aria-label="Slide 5">
+                    <img class="img-fluid" src="img/Sider/carousel_new_05.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="5" aria-label="Slide 6">
+                    <img class="img-fluid" src="img/Sider/carousel_new_06.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="6" aria-label="Slide 7">
+                    <img class="img-fluid" src="img/Sider/carousel_new_07.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="7" aria-label="Slide 8">
+                    <img class="img-fluid" src="img/Sider/carousel_new_08.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="8" aria-label="Slide 9">
+                    <img class="img-fluid" src="img/Sider/carousel_new_09.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="9" aria-label="Slide 10">
+                    <img class="img-fluid" src="img/Sider/carousel_new_10.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="10" aria-label="Slide 11">
+                    <img class="img-fluid" src="img/Sider/carousel_new_11.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="11" aria-label="Slide 12">
+                    <img class="img-fluid" src="img/Sider/carousel_new_12.jpg" alt="Image">
+                </button>-->
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="12" aria-label="Slide 13">
+                    <img class="img-fluid" src="img/Sider/carousel-15.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="13" aria-label="Slide 14">
+                    <img class="img-fluid" src="img/Sider/carousel-16.jpg" alt="Image">
+                </button>
+                <!--<button type="button" data-bs-target="#header-carousel" data-bs-slide-to="4" aria-label="Slide 5">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-05.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="5" aria-label="Slide 6">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-06.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="6" aria-label="Slide 7">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-07.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="7" aria-label="Slide 8">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-08.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="8" aria-label="Slide 9">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-09.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="9" aria-label="Slide 10">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-10.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="10" aria-label="Slide 11">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-11.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="11" aria-label="Slide 12">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-12.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="12" aria-label="Slide 13">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-13.jpg" alt="Image">
+                </button>
+                <button type="button" data-bs-target="#header-carousel" data-bs-slide-to="13" aria-label="Slide 14">
+                    <img class="img-fluid" src="img/Banners/Banner Thumbnails/carousel-thumbnail-14.jpg" alt="Image">
+                </button>-->
+
+
+            </div>
+
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/Sider/carousel-01.jpg" alt="Image">
+
+                    <div class="carousel-caption">
+                        <!--<h1 class="typewriter">Hello, I am a typewriter effect!</h1>-->
+                        <!--<div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">WELCOME TO </h4>
+                            <h1 class="display-1 text-primary mb-0 animated zoomIn">ST. FRANCIS' CONVENT INTER COLLEGE JHANSI</h1>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/carousel-02.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/carousel-03_new.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/carousel-04.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/New-Session.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/12th_Farewell.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+
+                <div class="carousel-item">
+                    <!--<img class="w-100" src="img/Sider/carousel_new_05.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/1.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <!--<img class="w-100" src="img/Sider/carousel_new_06.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/2.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <!--<img class="w-100" src="img/Sider/carousel_new_07.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/3.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <!--<img class="w-100" src="img/Sider/carousel_new_08.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/4.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <!--<img class="w-100" src="img/Sider/carousel_new_09.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/5.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="carousel-item">
+                    <!-- <img class="w-100" src="img/Sider/carousel_new_10.jpg" alt="Image">-->
+                    <img class="w-100" src="img/Sider/6.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+                <!--<div class="carousel-item">
+                <img class="w-100" src="img/Sider/carousel_new_11.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>-->
+                <!--<div class="carousel-item">
+                <img class="w-100" src="img/Sider/carousel_new_12.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/carousel-15.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Sider/carousel-16.jpg" alt="Image">
+                    <!--<div class="carousel-caption">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                            <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                        </div>
+                    </div>-->
+                </div>
+
+                <!--<div class="carousel-item">
+                <img class="w-100" src="img/Banners/carousel-05.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-06.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-07.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-08.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-09.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-10.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-11.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-12.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-13.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+                <!--</div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/Banners/carousel-14.jpg" alt="Image">-->
+                <!--<div class="carousel-caption">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase mb-4 animated zoomIn">We Are Leader In</h4>
+                        <h1 class="display-1 text-white mb-0 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                    </div>
+                </div>-->
+            </div>
+
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+
+
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Carousel End -->
+    <marquee class="text-primary"><strong>Welcome to our School </strong></marquee>
+
+
+    <!--Virtual tour start-->
+
+    <div class="row g-5 mt-3">
+        <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3">Virtual Tour</h1>
+                <!--<strong> <h3 class="mb-4">Virtual Tour</h3></strong>-->
+            </div>
+
+            <div class="d-flex justify-content-center align-items-center" style="margin:0 10px;">
+                <!--<img class="img-fluid" src="img/about.jpg" alt="">-->
+                <!--<img class="img-fluid" src="img/Estabilshed.jpg" alt="" style="border-block-color:blue">-->
+                <!--<iframe class="VirtualTour1" width="60%" height="345" src="https://www.youtube.com/embed/qtcgPVeAYPQ?&playlist=qtcgPVeAYPQ&loop=1&autoplay=1" allow="autoplay;">
+                </iframe><br />-->
+                <video autoplay muted loop id="myVideo" class="play" style="width:70vw;border:1px solid white; border-radius:10px;">
+                    <source src="/video/videoplayback.mp4" type="video/mp4">
+                </video>
+
+
+                <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/qtcgPVeAYPQ?si=AGPPujLTXC34ZZYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <script>
+            const video = document.getElementById('myVideo');
+            video.addEventListener('click',()=>{
+            if(video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+
+            updateCursor();
+
+            });
+
+            const updateCursor = () => {
+             if (video.paused) {
+                video.classList.add('paused');
+             } else {
+                video.classList.remove('paused');
+            }
+            };
+
+        updateCursor();
+
+        </script>
+
+        <style>
+            .play {
+                cursor: url(/video/pause-solid.svg) 4 12,auto;
+            }
+
+                .play.paused {
+                    cursor: url(/video/play-solid.svg) 4 12,auto;
+                }
+        </style>
+
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="h-100">
+                <!--<h5 class="display-6 mb-4">WELCOME TO <span class="text-primary">ST. FRANCIS' CONVENT INTER COLLEGE</span> </h5>-->
+                <!--<h5>WELCOME TO <span class="text-primary">ST. FRANCIS' CONVENT INTER COLLEGE</span> </h5>-->
+                <!--<h4 class="section-title bg-white text-start text-primary pe-3">VIRTUAL TOUR</h4>-->
+
+                <br />
+                <br />
+                <!--<p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>-->
+                <!--<div class="d-flex align-items-center mb-4 pb-2">
+                    <img class="flex-shrink-0 rounded-circle" src="img/logosfs.PNG" alt="" style="width: 30px; height: 30px; ">
+                    <div class="ps-4">
+                        <h6>
+                            St. Francis of Assisi
+
+                        </h6>
+                        <small>(Patron)</small>
+                    </div>
+                </div>-->
+                <!--<a class="btn btn-primary rounded-pill py-3 px-5" href="History.html">School History</a>-->
+            </div>
+        </div>
+    </div>
+
+    <!--Virtual tour end-->
+
+    <div class="container-xxl py-5 mt-4" id="noticeBoardContainer">
+        <div class="container">
+            <div class="text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3">Notice Board</h1>
+                <!--<h6 class="display-6">School Facilites</h6>-->
+            </div>
+
+            <div>
+                <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s" id="notice-carousel">
+
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="01">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\NoticeBoard\Primary_Wing_Summer_HW.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\NoticeBoard\Primary_Wing_Summer_HW.pdf"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">Primary Wing - Summer Holiday Homework</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="02">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\NoticeBoard\Compiled_HW_2025_26.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\NoticeBoard\Compiled_HW_2025_26.pdf"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px; font-size:15px;">Compiled Holiday Homework 2025 - 26</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="03">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\NoticeBoard\ICSE_2027_Regulations.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\NoticeBoard\ICSE_2027_Regulations.pdf"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">ICSE 2027 Regulations</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="04">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\NoticeBoard\ISC_2027_Regulations.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\NoticeBoard\ISC_2027_Regulations.pdf"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">ISC 2027 Regulations</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="05">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\NoticeBoard\Advisory_ISC_2027.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\NoticeBoard\Advisory_ISC_2027.pdf"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px; font-size:15px;">Advisory ISC 2027 - Revised Mathematics Syllabus (860) & New Applied Mathematics (885)</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="06">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\X&XII_ExtraClasses.jpeg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\X&XII_ExtraClasses.jpeg"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">Class 10 and 12 Extra classes</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="07">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\Summer_Vacation.jpeg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\Summer_Vacation.jpeg"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">Summer Vacation 2025</h6>
+                        </div>
+                    </div>
+
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="08">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\School_toppers_24_25.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\School_toppers_24_25.jpg"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">SCHOOL TOPPERS 2024 - 2025</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="09">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\ICSE_Toppers_24_25.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\ICSE_Toppers_24_25.jpg"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">ICSE TOPPERS 2024 - 2025</h6>
+                        </div>
+                    </div>
+
+                    <div class="noticeContainer">
+                        <div class="project-item border rounded h-100 p-4" data-dot="10">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid rounded" src="img\ISC_Toppers_24_25.jpg" alt="" style="width:200px;height:150px">
+                                <a target="_blank" href="img\ISC_Toppers_24_25.jpg"><i class="fa fa-eye fa-2x"></i></a>
+                            </div>
+                            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">ISC TOPPERS 2024 - 2025</h6>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="noticeContainer">
+         <div class="project-item border rounded h-100 p-4" data-dot="07">
+             <div class="position-relative mb-4">
+                 <img class="img-fluid rounded" src="img\NoticeBoard\DISPERSAL_TIME_SATURDAY.jpg" alt="" style="width:200px;height:150px">
+                 <a target="_blank" href="img\NoticeBoard\DISPERSAL_TIME_SATURDAY.jpg"><i class="fa fa-eye fa-2x"></i></a>
+             </div>
+             <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">DISPERSAL TIME FOR SATURDAY</h6>
+         </div>
+     </div>
+
+     <div class="noticeContainer">
+         <div class="project-item border rounded h-100 p-4" data-dot="08">
+             <div class="position-relative mb-4">
+                 <img class="img-fluid rounded" src="img\NoticeBoard\DISPERSAL_TIME_MON_FRI.jpg" alt="" style="width:200px;height:150px">
+                 <a target="_blank" href="img\NoticeBoard\DISPERSAL_TIME_MON_FRI.jpg"><i class="fa fa-eye fa-2x"></i></a>
+             </div>
+             <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">DISPERSAL TIME FOR MONDAY TO FRIDAY</h6>
+         </div>
+     </div>
+
+     <div class="noticeContainer">
+         <div class="project-item border rounded h-100 p-4" data-dot="09">
+             <div class="position-relative mb-4">
+                 <img class="img-fluid rounded" src="img\NoticeBoard\Vacancy_Office_Clerk.jpg" alt="" style="width:200px;height:150px">
+                 <a target="_blank" href="img\NoticeBoard\Vacancy_Office_Clerk.jpg"><i class="fa fa-eye fa-2x"></i></a>
+             </div>
+             <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">VACANCY FOR OFFICE CLERK</h6>
+         </div>
+     </div>
+
+     <div class="noticeContainer">
+         <div class="project-item border rounded h-100 p-4" data-dot="10">
+             <div class="position-relative mb-4">
+                 <img class="img-fluid rounded" src="img\UT-1-Exam-TT-Class-Nur-5th.jpg" alt="" style="width:200px;height:150px">
+                 <a target="_blank" href="img/UT-1-Exam-TT-Class-Nur-5th.jpg"><i class="fa fa-eye fa-2x"></i></a>
+             </div>
+             <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">UNIT TEST 1 EXAM TIME TABLE FOR CLASS NURSERY TO 5th</h6>
+         </div>
+     </div>-->
+                    <!--<div class="noticeContainer">
+                            <div class="project-item border rounded h-100 p-4" data-dot="10">
+                                <div class="position-relative mb-4">
+                                    <img class="img-fluid rounded" src="img\UT-1 Exam-TT-6th-12th.jpg" alt="" style="width:200px;height:150px">
+                                    <a target="_blank" href="img/UT-1 Exam-TT-6th-12th.jpg"><i class="fa fa-eye fa-2x"></i></a>
+                                </div>
+                                <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">UNIT TEST 1 EXAM TIME TABLE FOR CLASS 6th TO 12th</h6>
+                            </div>
+                        </div>
+    -->
+                    <!--<div class="noticeContainer">
+        <div class="project-item border rounded h-100 p-4" data-dot="09">
+            <div class="position-relative mb-4">
+                <img class="img-fluid rounded" src="img\Class-11-Admissions-Open.jpeg" alt="" style="width:200px;height:150px">
+                <a target="_blank" href="img/Class-11-Admissions-Open.jpeg"><i class="fa fa-eye fa-2x"></i></a>
+            </div>
+            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">CLASS 11 ADMISSION OPEN</h6>
+        </div>
+    </div>
+
+    <div class="noticeContainer">
+        <div class="project-item border rounded h-100 p-4" data-dot="10">
+            <div class="position-relative mb-4">
+                <img class="img-fluid rounded" src="img\Class-11-Admission-List.jpg" alt="" style="width:200px;height:150px">
+                <a target="_blank" href="img/NoticeBoard/Class-11-Admission-List-25-26.pdf"><i class="fa fa-eye fa-2x"></i></a>
+            </div>
+            <h6 class="bg-white text-center text-primary " style="width:200px;height:50px">CLASS 11 ADMISSION LIST 2025 - 2026</h6>
+        </div>
+    </div>-->
+
+
+                </div>
+
+            </div>
+
+
+
+            <br />
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="NoticeBoard.html">View More</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="container-xxl py-5">
+
+
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="img-border">
+                        <!--<img class="img-fluid" src="img/about.jpg" alt="">-->
+                        <img class="img-fluid" src="img/Estabilshed.jpg" alt="" style="border-block-color:blue">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <!--<h5 class="display-6 mb-4">WELCOME TO <span class="text-primary">ST. FRANCIS' CONVENT INTER COLLEGE</span> </h5>-->
+
+                        <h5>WELCOME TO <span class="text-primary">ST. FRANCIS' CONVENT INTER COLLEGE</span> </h5>
+                        <h3 class="section-title bg-white text-start text-primary pe-3">Established In 1894 </h3>
+
+                        <p style="text-align:justify">
+                            <strong> <span class="text-primary">ST. FRANCIS' CONVENT INTER COLLEGE</span> </strong> is one of the top-most English medium schools
+                            in Jhansi.Our school was founded in 1894 and it is affiliated to the ISC and ICSE Board
+                            and it has classes ranging from I to XII. Our School also includes
+                            pre-primary section.It is located in P.O. Box No. 1,67, Cantt, Jhansi, Uttar Pradesh - 284001.
+                        </p>
+                        <br />
+                        <br />
+                        <!--<p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>-->
+                        <!--<div class="d-flex align-items-center mb-4 pb-2">
+                            <img class="flex-shrink-0 rounded-circle" src="img/logosfs.PNG" alt="" style="width: 30px; height: 30px; ">
+                            <div class="ps-4">
+                                <h6>
+                                    St. Francis of Assisi
+
+                                </h6>
+                                <small>(Patron)</small>
+                            </div>
+                        </div>-->
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="History.html">School History</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+    <!--<div class="container col-lg-12" style="overflow: hidden;display:flex;flex-direction:column;">
+    <div>
+        <h3 class="section-title bg-white text-start text-primary pe-3">Happy Birthday !!</h3>
+    </div>-->
+    <!--​​<iframe src="TESTB.html" class="col-lg-6 ifra" title="Iframe Example"></iframe>-->
+    <!--</div>-->
+    <style>
+        .ifra {
+            height: 100vh;
+            max-height: 50vh;
+            overflow: hidden;
+        }
+
+        @media (max-width:720px) {
+            .ifra {
+                height: 40vh;
+                max-height: 60vh;
+                overflow: hidden;
+            }
+        }
+    </style>
+
+    <!-- Facts Start -->
+    <!--<div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-certificate fa-4x text-primary mb-4"></i>
+
+                        <h5 class="mb-3">Years Experience</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">111</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users-cog fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Team Members</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-users fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Satisfied Clients</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234</h1>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="fact-item bg-light rounded text-center h-100 p-5">
+                        <i class="fa fa-check fa-4x text-primary mb-4"></i>
+                        <h5 class="mb-3">Projects Done</h5>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">1234+</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Facts End -->
+    <style>
+
+        @media(max-width:991px) {
+            #patronCtnr, #principalCtnr, #headGirlCtnr, #visionCtnr {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5" id="patronCtnr">
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <h3 class="section-title bg-white text-start text-primary pe-3">Our Patron</h3>
+                        <!--<h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">10 Years</span> Of Experience</h1>-->
+                        <p style="text-align:justify">
+                            Lord, make me an instrument of your peace.<br />
+                            Where there is hatred, let me sow love.<br />
+                            Where there is injury, pardon.<br />
+                            Where there is doubt faith.<br />
+                            Where there is despair hope,<br />
+                            Where there is darkness light, and Where there is sadness, joy.<br />
+                            O Divine Master, grant that I may not so much seek<br />
+                            To be consoled as to console.<br />
+                            To be understood as to understand;<br />
+                            To be loved as to love.<br />
+                            For it is in giving that we receive.It is in pardoning that we are pardoned;<br />
+                            And it is in dying that we were born to Eternal Life.<br />
+                        </p>
+                        <!--<p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos.</p>-->
+                        <div class="d-flex align-items-center mb-4 pb-2">
+                            <!--<img class="flex-shrink-0 rounded-circle" src="img/logosfs.PNG" alt="" style="width: 30px; height: 30px; ">-->
+                            <div class="ps-4">
+                                <h6>
+                                    St. Francis of Assisi
+
+                                </h6>
+                                <small>(Patron)</small>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="OurPatron.html">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="img-border ">
+                        <!--<img class="img-fluid" src="img/about.jpg" alt="">-->
+                        <img class="img-fluid .img-fluid:hover" src="img/OurPatron.PNG" alt="" style="border-block-color:blue">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Feature Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="img-border">
+                        <!--<img class="img-fluid" src="img/feature.jpg" alt="">-->
+                        <img class="img-fluid" src="img/mary-ward1.png" alt="">
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="h-100">
+                        <h3 class="section-title bg-white text-start text-primary pe-3">Our Foundress</h3>
+                        <!-- <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>-->
+                        <p class="mb-4">
+                            Mary Ward was born in Yorkshire, England in 1585 at a time of severe persecution of Catholics. Despite the sufferings, loss of property and even death of dear ones, many of her friends, relatives, and acquaintances remained faithful to their religion. Brought up in such an atmosphere of heroism and self-sacrifice, Mary grew up to be a woman of deep faith, steely determination and unswerving loyalty to the Church.
+                        </p>
+                        <p>
+                            <strong>
+                                “There is no such difference between men and women that women may not do great things.”<br />
+                                - Mary Ward
+                            </strong>
+                        </p>
+                        <div class="d-flex align-items-center mb-4 pb-2">
+                            <div class="ps-4">
+                                <h6>
+                                    Mary Ward
+
+                                </h6>
+                                <small>(Our Foundress)</small>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="OurFoundress.html">Read More</a>
+                        <div class="row g-4">
+                            <!--<div class="col-12">
+                                <div class="skill">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">Digital Marketing</p>
+                                        <p class="mb-2">85%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-12">
+                                <div class="skill">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">SEO & Backlinks</p>
+                                        <p class="mb-2">90%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--<div class="col-12">
+                                <div class="skill">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="mb-2">Design & Development</p>
+                                        <p class="mb-2">95%</p>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+    <!-- Message Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3">Message</h1>
+                <strong><h3>PRINCIPAL'S MESSAGE</h3></strong>
+            </div>
+            <div class="container">
+                <div class="row g-5" id="principalCtnr">
+
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="h-100">
+                            <!--<h3 class="section-title bg-white text-start text-primary pe-3">Our Patron</h3>-->
+                            <!--<h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">10 Years</span> Of Experience</h1>-->
+                            <p style="text-align:justify">
+                                <strong> Hearty Welcome to our School Website! </strong> <br />The website showcases the wealth of activities we offer to our students and gives them a wider audience for their wonderful work. We hope you enjoy your visit and return regularly to check out our latest news. As the principal of the school, I feel honoured and privileged to be part of the SFC family, where everyone is a learner and every day is an opportunity to learn and discover. It’s an exhilarating and challenging time to be at the helm of the school, when it is growing in leaps and bounds. Learning is an ever-continuous journey of experience through the ocean of life.Here I am at the helm with the Manager Sr. Digna as the chief Navigator, all the sisters as the light house, and the dynamic group of staff members as the efficient crew.
+                            </p>
+
+                            <div class="ps-4">
+                                <h6>
+                                    <strong>
+                                        Sr. Merlin<br />
+                                        (Principal)
+                                    </strong>
+
+                                </h6>
+
+                            </div>
+                        </div>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="PrincipalMessage.html">Read More</a>
+                    </div>
+                    <div class="col-lg-5 wow  fadeInUp" data-wow-delay="0.1s">
+                        <div class="img-border">
+                            <!--<img class="img-fluid" src="img/about.jpg" alt="">-->
+                            <img class="img-fluid" src="img/Principal_Photo.jpg" alt="" style="border-block-color:blue">
+                            <!--<img class="img-fluid" src="img/pricipal_img_New.jpeg" alt="" style="border-block-color:blue">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h6 class="section-title bg-white text-center text-primary px-3">Message</h6>-->
+                <strong><h3>MANAGER'S MESSAGE</h3></strong>
+            </div>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5">
+                        <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="img-border">
+                                <!--<img class="img-fluid" src="img/feature.jpg" alt="">-->
+                                <img class="img-fluid" src="img/Manager.jpg" alt="">
+                            </div>
+
+                        </div>
+                        <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="h-100">
+                                <!--<h3 class="section-title bg-white text-start text-primary pe-3">Our Foundress</h3>-->
+                                <!-- <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>-->
+                                <p class="mb-4" style="text-align:justify">
+                                    <strong> “IT IS AN HONOUR TO WORK FOR GOD”   </strong><br />
+                                    Looking at our school today some might wonder what was its humble beginning like. The history of St. Francis’ Convent Inter College, Jhansi is the history of courage and missionary zeal of our sisters who took bold and careful steps for the development of the school. We offer a bouquet of gratitude to our pioneering sisters. Two Irish Missionaries started this school in the year 1898. After a few years the circumstances forced them to leave this place. Then in 1913 it was handed over to us. It is a Catholic Minority Institution under the management of the Congregation of Jesus founded by Venerable Mary Ward in 1609.
+                                </p>
+                                <p>
+                                    <strong>
+                                        Sr. Digna CJ<br />
+                                        (Manager)
+                                    </strong>
+                                </p>
+
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="ManagerMessage.html">Read More</a>
+                                <div class="row g-4">
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Message End -->
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h6 class="section-title bg-white text-center text-primary px-3">Message</h6>-->
+                <strong><h3>HEAD GIRL'S MESSAGE</h3></strong>
+            </div>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5" id="headGirlCtnr">
+                        <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="h-100">
+                                <!--<h3 class="section-title bg-white text-start text-primary pe-3">Our Foundress</h3>-->
+                                <!-- <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>-->
+                                <p class="mb-4" style="text-align:justify">
+                                    A leader is someone who can see the invisible, believe in the unbelievable and achieve the impossible.<br />
+                                    Dear SFCIANS,<br />
+                                    I am honoured to serve as the Head Girl for the academic year 2024-25. As I reflect on my time at St. Francis' Convent Inter College, I am filled with gratitude for the opportunities and experiences I have had. I entered as a little girl and here I am wearing the crown of glory, responsibility and authority. It is a crown of service, a symbol of my commitment to this school, but this crown is not just mine to wear- it represents each one of us and the values we uphold together.<br />
+                                    SFC has always been a place where students are encouraged to explore their passions and develop their talents. From academic pursuits to extracurricular activities, we have a fitting environment and wealth of resources to help us succeed.<br />
+                                </p>
+                                <p>
+                                    <strong>
+                                        Jaya Bhadoria<br />
+                                        (Head Girl)
+                                    </strong>
+                                </p>
+
+                                <a class="btn btn-primary rounded-pill py-3 px-5" href="HeadGirl.html">Read More</a>
+                                <div class="row g-4">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="img-border">
+                                <!--<img class="img-fluid" src="img/feature.jpg" alt="">-->
+                                <img class="img-fluid" src="img/HeadGirl_2024_25.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <strong><h3>MISSION STATEMENT OF THE SCHOOL</h3></strong>
+            </div>
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow  fadeInUp" data-wow-delay="0.1s">
+                        <div class="img-border">
+                            <!--<img class="img-fluid" src="img/about.jpg" alt="">-->
+                            <img class="img-fluid" src="img/Our_Mission_Our_Vision.jpg" alt="" style="border-block-color:blue">
+                            <!--<img class="img-fluid" src="img/pricipal_img_New.jpeg" alt="" style="border-block-color:blue">-->
+                        </div>
+                    </div>
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="h-100">
+                            <!--<h3 class="section-title bg-white text-start text-primary pe-3">Our Patron</h3>-->
+                            <!--<h1 class="display-6 mb-4">#1 Digital Solution With <span class="text-primary">10 Years</span> Of Experience</h1>-->
+                            <p style="text-align:justify">
+                                The integral human development of girls from every social background in the spirit of freedom, justice, sincerity and felicity so that they remain alive to the needs of the world with the knowledge which gives them power to act, and motivated by the love which gives them purpose and wisdom in their action.
+                                <br />
+                                <br />
+                                Thus they live the fullness of life to which they are called.
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-3 px-5 mt-5" href="OurMission.html">Read More</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h6 class="section-title bg-white text-center text-primary px-3">Message</h6>-->
+                <strong><h3>VISION STATEMENT OF THE SCHOOL</h3></strong>
+            </div>
+            <div class="container-xxl py-5">
+                <div class="container">
+                    <div class="row g-5" id="visionCtnr">
+                        <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="h-100">
+                                <!--<h3 class="section-title bg-white text-start text-primary pe-3">Our Foundress</h3>-->
+                                <!-- <h1 class="display-6 mb-4">Why People Trust Us? Learn About Us!</h1>-->
+                                <p class="mb-4" style="text-align:justify">
+                                    We, the C.J sisters of the Delhi Province, in collaboration with the staff, renew our commitment with the pioneering spirit of our Foundress Venerable Mary Ward, to bring about the kingdom of God through our Education Ministry. <br /> <br />
+                                    We aim at training our students to strive for personal excellence in order to take leadership in enabling their fellow citizens to create a just society where the underprivileged and exploited, especially women, children and marginalized are restored to their God-given dignity, rights and freedom.
+                                </p>
+
+
+                                <a class="btn btn-primary rounded-pill py-3 px-5 mt-5" href="OurMission.html">Read More</a>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="img-border">
+                                <!--<img class="img-fluid" src="img/feature.jpg" alt="">-->
+                                <img class="img-fluid" src="img/Our_Mission_Our_Vision.jpg" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message End -->
+    <!-- Cabinet Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3">School Cabinet</h1>
+                <strong> <h3 class=" mb-4"> 2024-2025 </h3></strong>
+            </div>
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="project-item border rounded h-100 p-4" data-dot="01">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/HeadGirl2024_25_1.png" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">JAYA BHADORIA</h5>
+                                <span> HEAD GIRL</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">JAYA BHADORIA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="02">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/SAMAIRA ROBERTS.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SAMAIRA ROBERTS</h5>
+                                <span>Vice Headgirl</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SAMAIRA ROBERTS</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="03">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/ANCHAL RAWAT.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ANCHAL RAWAT</h5>
+                                <span>Sports Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ANCHAL RAWAT</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="04">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/TANISHI SHARMA.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">TANISHI SHARMA</h5>
+                                <span>Sports Vice Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">TANISHI SHARMA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="05">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/BANSURI YADAV.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">BANSURI YADAV</h5>
+                                <span>English Editor</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">BANSURI YADAV</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="06">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/AMALIN ROSE.png" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">AMALIN ROSE</h5>
+                                <span>Hindi Editor</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">AMALIN ROSE</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="07">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/ADITI SINGH.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ADITI SINGH</h5>
+                                <span>Yellow House Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ADITI SINGH</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="08">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/AANYA JAIN.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">AANYA JAIN </h5>
+                                <span>Yellow House Vice Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">AANYA JAIN</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="09">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/RAINA HIRWANI.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">RAINA HIRWANI</h5>
+                                <span>Red House Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">RAINA HIRWANI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="10">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/LAVINDER KAUR KALSI.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">LAVINDER KAUR KALSI</h5>
+                                <span>Red House Vice Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">LAVINDER KAUR KALSI</h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="11">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/DEEKSHA KUSHWAHA.png" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">DEEKSHA KUSHWAHA</h5>
+                                <span>Blue House Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">DEEKSHA KUSHWAHA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="12">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/NIVESHIKA TRIPATHI.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">NIVESHIKA TRIPATHI</h5>
+                                <span>Blue House Vice Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">NIVESHIKA TRIPATHI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="project-item border rounded h-100 p-4" data-dot="13">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/KHWAISH SANGTANI.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">KHWAISH SANGTANI</h5>
+                                <span>Green House Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">KHWAISH SANGTANI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="14">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/cabinet/NAVIKA BHARGAWA.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">NAVIKA BHARGAWA</h5>
+                                <span>Green House Vice Captain</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">NAVIKA BHARGAWA</h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Cabinet End -->
+    <!-- Service Start -->
+    <!--<div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+                <h1 class="display-6 mb-4">We Focuse On Making The Best In All Sectors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-1.jpg" alt="">
+                        <h4 class="mb-0">Web Design</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-2.jpg" alt="">
+                        <h4 class="mb-0">App Development</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-3.jpg" alt="">
+                        <h4 class="mb-0">SEO Optimization</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-4.jpg" alt="">
+                        <h4 class="mb-0">Social Marketing</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-5.jpg" alt="">
+                        <h4 class="mb-0">Email Marketing</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-6.jpg" alt="">
+                        <h4 class="mb-0">PPC Advertising</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Service End -->
+    <!-- Facilites Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3">Facilities</h1>
+                <h6 class="display-6">School Facilities</h6>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-1.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Main Gate</h4>
+                        <!--<h4 class="mb-0">School Building</h4>-->
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-1Bulding.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">School Building</h4>
+                        <!--<h4 class="mb-0">School Building</h4>-->
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-8.png" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Assembly</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-9.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Kindergarden</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-2.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Physics Lab</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-3.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Chemistry Lab</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <a class="service-item d-block rounded h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-4.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Biology Lab</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-5.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Computer Lab</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-6.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Library</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/service-7.jpg" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Sports</h4>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/playgroundnew.png" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">PlayGround</h4>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <a class="service-item d-block rounded  h-100 p-4" href="">
+                        <img class="img-fluid rounded mb-4" src="img/SmartClasses.png" alt="">
+                        <h4 class="section-title bg-white text-start text-primary pe-3">Smart Class / Interactive Panels</h4>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    </div>
+    <!-- Service End -->
+    <!-- Image Gallery Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="section-title bg-white text-center text-primary px-3"> Gallery</h1>
+                <h3 class="display-6 mb-4">Image Gallery</h3>
+            </div>
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+
+                <div class="project-item border rounded p-4" data-dot="01" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\ImageGallery\CISCE_Zonal_Basketball_Match\1.jpeg" alt="">
+                        <a href="CISCE_Zonal_Basketball_Match.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        CISCE Zonal Basketball Match
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="02" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Culmination_Ceremony.jpg" alt="">
+                        <a href="Summer_Camp_Culmination_Ceremony.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp Culmination Ceremony
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="03" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\EBSB_Essay_Competetion.jpg" alt="">
+                        <a href="EBSB_Essay_Competetion.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Essay Competition - Ek Bharat Shresth Bharat
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="04" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Day6.jpg" alt="">
+                        <a href="Summer_Camp_Day6.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp - Day 6
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="05" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Day4.jpg" alt="">
+                        <a href="Summer_Camp_Day4.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp - Day 4
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="06" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Day3.jpg" alt="">
+                        <a href="Summer_Camp_Day3.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp - Day 3
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+
+                <div class="project-item border rounded p-4" data-dot="07" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Day2.jpg" alt="">
+                        <a href="Summer_Camp_Day2.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp - Day 2
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+
+                <div class="project-item border rounded p-4" data-dot="08" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Summer_Camp_Day1.jpg" alt="">
+                        <a href="Summer_Camp_Day1.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Summer Camp - Day 1
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="09" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\JPIC_watches_World_War_II_Documentry.jpg" alt="">
+                        <a href="World_War_II_Documentry.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        JPIC watches World War II Documentary
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="10" style="height:300px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="cover-images\Inter_House_Dance_Competition.jpg" alt="">
+                        <a href="Inter_House_Dance_Competition.html" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">
+                        Inter House Dance Competition
+                    </h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>      
+            </div>
+            <div class="text-center mx-auto mt-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="PhotoGallery.html">View More</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- Image Gallery End -->
+    <!-- Video Gallery Start -->
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h6 class="section-title bg-white text-center text-primary px-3"> Gallery</h6>-->
+                <h3 class="display-6 mb-4">Video Gallery</h3>
+            </div>
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+
+                <div class="project-item border rounded p-4" data-dot="01" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Labour_Day_2025.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=qOfzG8pPvY4&t=14s" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Labour Day 2025<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="02" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\EarthDay_2025_Primary_Wing.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=rJ5MrIw2ods&t=5s" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Happy Earth Day 2025 - Primary Wing<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="03" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Happy_Earth_Day_2025.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=cPNXVw-mj8M&t=7s" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Happy Earth Day 2025<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="04" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Heartfelt_Tribute.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=k5HaWqvw1nY&t=3s" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">A Heartfelt Tribute to an Inspiring Educator & Mentor:  Mrs. Tripat Walia<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="05" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\ThanksGiving.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=HFNkcSuky4w" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Thanksgiving Assembly by class 7 C<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="06" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Julius_Caesar.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=vx67FBYHeYU" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Julius Caesar Play by Class 9<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="07" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://www.youtube.com/watch?v=ML4-jgHv23s" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Conclusion to "Mary Ward Week Celebration" by Aanya Jain<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="08" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/naLp0o_tC5E?si=O_xm-LZdjVWukx7T" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 8<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+
+                <div class="project-item border rounded p-4" data-dot="09" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/cviwOrBs4S0?si=izO7CGlOXol3rDxY" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 7</h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+                <div class="project-item border rounded  p-4" data-dot="10" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/TOPJXitSFh8?si=63SqCrGL1WFlFbm4" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 6<br /><br /></h6>
+                    <!--<span>Digital agency website design and development</span>-->
+                </div>
+                <!--<div class="project-item border rounded p-4" data-dot="07" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/z3dwDxhZ1JA?si=P-UAu9pVme0GU8IZ" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 5<br /><br /></h6>-->
+                <!--<span>Digital agency website design and development</span>-->
+                <!--</div>
+                <div class="project-item border rounded p-4" data-dot="08" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/23-wHtbWN4w?si=yTAwD8gxd83LIyzY" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 4</h6>-->
+                <!--<span>Digital agency website design and development</span>-->
+                <!--</div>
+
+                <div class="project-item border rounded p-4" data-dot="09" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/uxeIyOQUNco?si=ctDREs-u-1win64c" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 3</h6>-->
+                <!--<span>Digital agency website design and development</span>-->
+                <!--</div>
+
+                <div class="project-item border rounded p-4" data-dot="10" style="height:280px;">
+                    <div class="position-relative mb-4">
+                        <img class="img-fluid rounded" src="img\Gallery\YoutubeGallery\Mary Ward Week Reflection_Day.jpg" alt="">
+                        <a href="https://youtu.be/lajZqtDG030?si=c6ARUhP4-F1u4fCQ" target="_blank" data-lightbox="project"><i class="fa fa-eye fa-2x"></i></a>
+                    </div>
+                    <h6 class="bg-white text-center text-primary ">Mary Ward Week Reflection: Day 2</h6>-->
+                <!--<span>Digital agency website design and development</span>-->
+                <!--</div>-->
+
+            </div>
+
+            <div class="text-center mx-auto mt-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="VideoGallery.html">View More</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- Video Gallery End -->
+
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h1 class="section-title bg-white text-center text-primary px-3"> Topper's 2023-2024</h1>-->
+                <h1 class="section-title bg-white text-center text-primary px-3"> Toppers 2024 - 2025</h1>
+                <strong> <h3 class=" mb-4">ICSE Toppers </h3></strong>
+            </div>
+
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="project-item border rounded h-100 p-4" data-dot="01">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/ANANYA_98.6.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ANANYA</h5>
+                                <span> 98.6%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ANANYA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="02">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/SANSKRITI_CHANGANI_98.4.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SANSKRITI CHANGANI</h5>
+                                <span>98.4%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SANSKRITI CHANGANI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="03">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/SHRANKHLA_SAHU_98.2.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SHRANKHLA SAHU</h5>
+                                <span>98.2%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SHRANKHLA SAHU</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="04">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/ALISHBA_IRFAN_98.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ALISHBA IRFAN</h5>
+                                <span>98%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ALISHBA IRFAN</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="05">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/MANYA_KANAL_96.6.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">MANYA KANAL</h5>
+                                <span>96.6%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">MANYA KANAL</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="06">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/ALVIYA_SIDDIQUI_96.6.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ALVIYA SIDDIQUI</h5>
+                                <span>96.6%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ALVIYA SIDDIQUI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="07">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/ANUBHUTI_JUNEJA_96.2.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ANUBHUTI JUNEJA</h5>
+                                <span>96.2%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ANUBHUTI JUNEJA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="08">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/NYASA_BHARGAVA_96.2.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">NYASA BHARGAVA</h5>
+                                <span>96.2%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">NYASA BHARGAVA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="09">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/TANUSHIKA_AGRAWAL_96.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">TANUSHIKA AGRAWAL</h5>
+                                <span>96%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">TANUSHIKA AGRAWAL</h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="10">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/MAHIKA_RAWAT_95.8.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">MAHIKA RAWAT</h5>
+                                <span>95.8%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">MAHIKA RAWAT</h5>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="11">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/AASHI_KUSHWAHA_95.6.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">AASHI KUSHWAHA</h5>
+                                <span>95.6%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">AASHI KUSHWAHA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="12">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/RUCHI_SHARMA_95.4.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">RUCHI SHARMA</h5>
+                                <span>95.4%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">RUCHI SHARMA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="13">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/AAROHI_SHARMA_95.4.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">AAROHI SHARMA</h5>
+                                <span>95.4%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">AAROHI SHARMA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="14">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ICSE_Toppers_24_25/NYASHA_GUPTA_95.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">NYASHA GUPTA</h5>
+                                <span>95%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">NYASHA GUPTA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!--<div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+        <div class="project-item border rounded h-100 p-4" data-dot="01">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Priyanshi_Gupta_98.5.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Priyanshi Gupta</h5>
+                        <span> 98.5%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Priyanshi Gupta</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="02">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Ananya_Arora_97.8.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Ananya Arora </h5>
+                        <span>97.8%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Ananya Arora </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="03">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Aanshi_Yadav_95.6.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Aanshi Yadav</h5>
+                        <span>97.8%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Aanshi Yadav </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="04">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Ojasvi_Karolia_97.6.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Ojasvi Karolia </h5>
+                        <span>97.6%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Ojasvi Karolia </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="05">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Tejasvi_Dubey _97.2.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Tejasvi Dubey</h5>
+                        <span>97.2%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Tejasvi Dubey </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="06">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Tulika_Gupta_96.8.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Tulika Gupta</h5>
+                        <span>96.8%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Tulika Gupta</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="07">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Tanushree_Gupta_96.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Tanushree Gupta</h5>
+                        <span>96%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Tanushree Gupta</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="08">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Saanvi_Sahu_95.8.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Saanvi Sahu</h5>
+                        <span>95.8%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Saanvi Sahu</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="09">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Amalin_Rose_95.2.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Amalin Rose</h5>
+                        <span>95.2%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Amalin Rose</h5>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="10">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Leeza_Vadhaya_95.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Leeza Vadhaya</h5>
+                        <span>95%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Leeza Vadhaya</h5>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="11">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Pragya_Tiwari_95.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Pragya Tiwari</h5>
+                        <span>95%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Pragya Tiwari</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="12">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ICSE_Toppers_2023_24/Sanvi_Agarwal_95.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Sanvi Agarwal</h5>
+                        <span>95%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Sanvi Agarwal</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>-->
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-3 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <!--<h6 class="section-title bg-white text-center text-primary px-3"> Topper's 2023-2024</h6>-->
+                <strong><h3 class=" mb-4">ISC Toppers</h3></strong> 
+                <h4 class="mb-4">Science Stream</h4>
+            </div>
+
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="project-item border rounded h-100 p-4" data-dot="01">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/GARIMA_RAI_97.5.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">GARIMA RAI</h5>
+                                <span> 97.5%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">GARIMA RAI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="02">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/SOMYA_SHUKLA_94.2.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SOMYA SHUKLA</h5>
+                                <span>94.2%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SOMYA SHUKLA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="03">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/IRISH_JAMAL_KHAN_94.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">IRISH JAMAL KHAN</h5>
+                                <span>94%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">IRISH JAMAL KHAN</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="04">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/ADITI_SINGH_92.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ADITI SINGH</h5>
+                                <span>92%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ADITI SINGH</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="05">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/SUHANI_VERMA_91.5.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SUHANI VERMA</h5>
+                                <span>91.5%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SUHANI VERMA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="06">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/YASHIKA_SRIVASTAVA_91.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">YASHIKA SRIVASTAVA</h5>
+                                <span>91%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">YASHIKA SRIVASTAVA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="07">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Science/ANUSHKA_SRIVASTAVA_90.75.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ANUSHKA SRIVASTAVA</h5>
+                                <span>90.75%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ANUSHKA SRIVASTAVA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mx-auto mb-3 mt-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">  
+                <h4 class=" mb-4">Commerce Stream</h4>
+            </div>
+
+            <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <div class="project-item border rounded h-100 p-4" data-dot="01">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/KHWAISH_SANGTANI_94.75.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">KHWAISH SANGTANI</h5>
+                                <span> 94.75%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">KHWAISH SANGTANI</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="02">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/PRIYANSHI_PATHAK_94.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">PRIYANSHI PATHAK</h5>
+                                <span>94%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">PRIYANSHI PATHAK</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="03">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/ARATRIKA_MUKHRAIYA_93.5.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">ARATRIKA MUKHRAIYA</h5>
+                                <span>93.5%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">ARATRIKA MUKHRAIYA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="04">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/PRABHANSHI_MISHRA_92.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">PRABHANSHI MISHRA</h5>
+                                <span>92%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">PRABHANSHI MISHRA</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-item border rounded h-100 p-4" data-dot="05">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/RIDDHIMA_JAIN_91.25.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">RIDDHIMA JAIN</h5>
+                                <span>91.25%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">RIDDHIMA JAIN</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="06">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/SHREYA_SAHGAL_91.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SHREYA SAHGAL</h5>
+                                <span>91%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SHREYA SAHGAL</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="07">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/SHREYA_SAHU_90.25.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">SHREYA SAHU</h5>
+                                <span>90.25%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">SHREYA SAHU</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item border rounded h-100 p-4" data-dot="08">
+                    <div class="team-item text-center p-4">
+                        <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers_2024_25/ISC_Toppers_24_25/Commerce/AKASHI_JAIN_90.jpg" alt="">
+                        <div class="team-text">
+                            <div class="team-title">
+                                <h5 class="bg-white text-center text-primary ">AKASHI JAIN</h5>
+                                <span>90%</span>
+                            </div>
+                            <div class="team-social">
+                                <h5 class="bg-white text-center text-primary ">AKASHI JAIN</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--<div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.1s">
+        <div class="project-item border rounded h-100 p-4" data-dot="01">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Anvisha_Singh_94.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Anvisha Singh</h5>
+                        <span> 94%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Anvisha Singh</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="02">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Aanchal_Surothiya_92.75.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Aanchal Surothiya </h5>
+                        <span>92.75%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Aanchal Surothiya</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="03">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Sharon_Prasad_92.75.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Sharon Prasad</h5>
+                        <span>92.75%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Sharon Prasad</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="04">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Aashi_Bansal_92.5.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Aashi Bansal</h5>
+                        <span>92.5%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Aashi Bansal</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="05">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Anushka_Barat_90.5.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Anushka Barat</h5>
+                        <span>90.5%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Anushka Barat</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="07">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Akshita_Anand_89.5.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Akshita Anand</h5>
+                        <span>89.5%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Akshita Anand</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="06">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Sampada_Gupta_89.75.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Sampada Gupta</h5>
+                        <span>89.75%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Sampada Guptaa</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="08">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Zoya_Khan_89.75.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Zoya Khan</h5>
+                        <span>89.75%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Zoya Khan</h5>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="09">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Unnati_Agarwal_89.5.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Unnati Agarwal</h5>
+                        <span>89.5%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Unnati Agarwal</h5>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="10">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Harshita_Soni_88.75.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Harshita Soni</h5>
+                        <span>88.75%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Harshita Soni</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-item border rounded h-100 p-4" data-dot="11">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Divyansha_Soni_86.25.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Divyansha Soni</h5>
+                        <span>86.25%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Divyansha Soni</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="12">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Jessenia_Singh_86.25.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Jessenia Singh</h5>
+                        <span>86.25%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Jessenia Singh</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="13">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Kanak_Gangwani85.25.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Kanak Gangwani</h5>
+                        <span>85.25%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Kanak Gangwani</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-item border rounded h-100 p-4" data-dot="14">
+            <div class="team-item text-center p-4">
+                <img class="img-fluid border rounded-circle  p-2 mb-4" src="img/Toppers2023_24/ISC_Toppers2023_24/Aayushi_Khare_84.7.png" alt="">
+                <div class="team-text">
+                    <div class="team-title">
+                        <h5 class="bg-white text-center text-primary ">Aayushi Khare</h5>
+                        <span>84.7%</span>
+                    </div>
+                    <div class="team-social">
+                        <h5 class="bg-white text-center text-primary ">Aayushi Khare</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>-->
+        </div>
+    </div>
+
+
+    <!-- Staff Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width:100%" ;>
+                <h1 class="section-title bg-white text-center text-primary px-3">Student</h1>
+                <h3 class="mb-4">Happy Birthday !!</h3>
+
+                ​​<iframe src="TESTB.html" class="col-lg-12 ifra" title="Iframe Example" id="birtday"></iframe><!--<iframe src="TESTB.html" class="col-lg-12 ifra" title="Iframe Example"></iframe>-->
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-image text-body footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class=" text-light mb-2">
+                        <i class="fa fa-map-marker-alt me-3"></i> P.O. Box No. 1, 67, Cantt,<br /> Jhansi,
+                        Uttar Pradesh - 284001
+                    </p>
+                    <p class="text-light mb-2"><i class="fa fa-phone-alt me-3"></i>+91 7376338453,  +91 94500 71734</p>
+                    <p class="text-light mb-2"><i class="fa fa-envelope me-3"></i>sfcicjhansi@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-secondary rounded-circle me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link text-light" href="PhotoGallery.html">Image Gallery</a>
+                    <a class="btn btn-link text-light" href="MediaGallery.html">Media Gallery</a>
+                    <a class="btn btn-link text-light " href="PrincipalMessage.html">Principal's Message</a>
+                    <a class="btn btn-link text-light" href="ManagerMessage.html">Manager's Message</a>
+                    <a class="btn btn-link text-light" href="history.html">History</a>
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <!--<h5 class="text-light mb-4">Gallery</h5>-->
+                    <!--<img class="img-fluid rounded" src="img/Mobile.png" alt="Image">-->
+                    <div style="text-align:center">
+                        <img class="" style="width: 165px; height: 300px" src="img/MobileAppNew.png" alt="Image">
+                    </div>
+                    <!--<img class="" style="width:300px; height:300px" src="img/Mobile.png" alt="Image">-->
+                    <!--<div class="row g-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-1.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-2.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-3.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-4.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-5.jpg" alt="Image">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded" src="img/project-6.jpg" alt="Image">
+                        </div>
+                    </div>-->
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <!--<a class="btn btn-primary " style="text-align:center" href="#">
+                        Download Mobile App
+                    </a><br />
+                    <h1><br /></h1>-->
+                    <!--<h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>-->
+                    <!--<div class="position-relative mx-auto" style="max-width: 400px;">-->
+                    <div style="text-align:center">
+                        <a class="btn btn-primary " style="text-align:center" href="#">
+                            Download Mobile App
+                        </a><br />
+                        <h1><br /></h1>
+                        <!--<input class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>-->
+                        <a href="https://play.google.com/store/search?q=st%20francis%20jhansi&c=apps" target="_blank"><img class="img-fluid rounded" src="img/google_play.png" alt="Image"></a><br /><br />
+                        <a href="https://play.google.com/store/search?q=st%20francis%20jhansi&c=apps" target="_blank"><img class="" style="width:100PX;height:100PX" src="img/AppQRNew.png" alt="Image"></a>
+                    </div>
+                    <!--<img class="img-fluid rounded" src="img/google_play.png" alt="Image">-->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">www.sfcjhs.org , All Right Reserved.</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <a class="text-light font-weight-semi-bold" href="http://www.teleiosinfotech.com/" target="_blank">  Designed By ,TELEIOS INFOTECH PVT. LTD.</a>
+                        <!--<br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!--<div class="erp_links"> <a href="https://sfcjhs.in/" target="_blank"><img src="img/parent portal.png" alt=" " class="img-fluid" /></a> </div>-->
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!--<script src="lib/lightbox/js/lightbox.min.js"></script>-->
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/responsive.js"></script>
+
+    <script>
+
+
+          const mediaQuery1100 = window.matchMedia("(min-width:1100px)");
+  function handleScreen1100(e) {
+        const myVideo =  document.getElementById("myVideo");
+
+        if(e.matches) {
+            myVideo.style.width = "60%";
+        }
+  }
+
+  handleScreen1100(mediaQuery1100);
+        mediaQuery1100.addListener(handleScreen1100);
+
+    </script>
+</body>
+
+</html>

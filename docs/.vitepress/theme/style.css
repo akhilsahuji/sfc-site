@@ -1,0 +1,314 @@
+/**
+ * Open Props Design System
+ * Modern CSS design tokens for consistent styling
+ */
+
+/* Import Open Props from CDN - Core design tokens */
+@import url('https://unpkg.com/open-props');
+@import url('https://unpkg.com/open-props/normalize.min.css');
+
+/* Import FontAwesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/**
+ * School Brand Colors with Open Props Integration
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* School Brand Colors */
+  --school-blue-hsl: 218 75% 40%;
+  --school-blue: hsl(var(--school-blue-hsl));
+  --school-blue-light: hsl(218 70% 50%);
+  --school-blue-lighter: hsl(218 65% 60%);
+  --school-blue-lightest: hsl(218 60% 70%);
+  --school-blue-dark: hsl(218 80% 30%);
+  --school-blue-darker: hsl(218 85% 20%);
+  
+  --school-yellow: var(--yellow-5);
+  --school-accent: var(--orange-5);
+  
+  /* VitePress Brand Integration */
+  --vp-c-brand: var(--school-blue);
+  --vp-c-brand-light: var(--school-blue-light);
+  --vp-c-brand-lighter: var(--school-blue-lighter);
+  --vp-c-brand-lightest: var(--school-blue-lightest);
+  --vp-c-brand-dark: var(--school-blue-dark);
+  --vp-c-brand-darker: var(--school-blue-darker);
+  --vp-c-brand-dimm: hsl(var(--school-blue-hsl) / 0.08);
+  
+  /* Open Props Enhanced Colors */
+  --surface-1: var(--gray-0);
+  --surface-2: var(--gray-1);
+  --surface-3: var(--gray-2);
+  --surface-shadow: var(--shadow-2);
+  --surface-glass: rgba(255, 255, 255, 0.1);
+  
+  /* Typography with Open Props */
+  --font-family-primary: var(--font-sans);
+  --font-family-heading: var(--font-sans);
+  
+  /* Spacing Scale */
+  --space-xs: var(--size-1);
+  --space-sm: var(--size-2);
+  --space-md: var(--size-3);
+  --space-lg: var(--size-5);
+  --space-xl: var(--size-7);
+  --space-2xl: var(--size-9);
+  
+  /* Border Radius Scale */
+  --radius-sm: var(--radius-2);
+  --radius-md: var(--radius-3);
+  --radius-lg: var(--radius-4);
+  --radius-xl: var(--radius-5);
+  
+  /* Enhanced Brand Variables */
+  --brand: var(--school-blue);
+  --brand-light: var(--school-blue-light);
+  --brand-dark: var(--school-blue-dark);
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+}
+
+/**
+ * Component: Button with Open Props
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: var(--school-blue-light);
+  --vp-button-brand-text: var(--gray-0);
+  --vp-button-brand-bg: var(--school-blue);
+  --vp-button-brand-hover-border: var(--school-blue-light);
+  --vp-button-brand-hover-text: var(--gray-0);
+  --vp-button-brand-hover-bg: var(--school-blue-light);
+  --vp-button-brand-active-border: var(--school-blue-light);
+  --vp-button-brand-active-text: var(--gray-0);
+  --vp-button-brand-active-bg: var(--school-blue);
+}
+
+/**
+ * Component: Home Hero with Open Props Gradients
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: var(--gradient-8);
+
+  --vp-home-hero-image-background-image: var(--gradient-12);
+  --vp-home-hero-image-filter: blur(var(--size-8));
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(var(--size-10));
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(var(--size-12));
+  }
+}
+
+/**
+ * Component: Custom Block with Open Props
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: var(--school-blue);
+  --vp-custom-block-tip-text: var(--school-blue-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Typography System with Open Props
+ * -------------------------------------------------------------------------- */
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-1);
+  line-height: var(--font-lineheight-3);
+  color: var(--gray-9);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-1);
+  margin-block: var(--space-md) var(--space-sm);
+}
+
+h1 { font-size: var(--font-size-6); }
+h2 { font-size: var(--font-size-5); }
+h3 { font-size: var(--font-size-4); }
+h4 { font-size: var(--font-size-3); }
+h5 { font-size: var(--font-size-2); }
+h6 { font-size: var(--font-size-1); }
+
+/**
+ * Enhanced Component Styles with Open Props
+ * -------------------------------------------------------------------------- */
+
+/* Card Components */
+.card {
+  background: var(--surface-1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-2);
+  padding: var(--space-lg);
+  transition: var(--animation-fade-in);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-4);
+  transform: translateY(var(--size-1));
+}
+
+/* Button Variants */
+.btn {
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-6);
+  transition: var(--animation-fade-in);
+  border: var(--border-size-1) solid transparent;
+}
+
+.btn-primary {
+  background: var(--school-blue);
+  color: var(--gray-0);
+  border-color: var(--school-blue);
+}
+
+.btn-primary:hover {
+  background: var(--school-blue-light);
+  border-color: var(--school-blue-light);
+}
+
+.btn-secondary {
+  background: var(--gray-2);
+  color: var(--gray-9);
+  border-color: var(--gray-3);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-3);
+  border-color: var(--gray-4);
+}
+
+/**
+ * Global Styles with Open Props
+ * -------------------------------------------------------------------------- */
+
+/* Remove default margin from markdown content in components */
+.content-section .content-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.content-section .content-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Better spacing for lists in content sections */
+.content-section ul,
+.content-section ol {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+.content-section li {
+  margin: var(--space-sm) 0;
+}
+
+/* Responsive iframe videos */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: var(--gray-9);
+  border-radius: var(--radius-lg);
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* School theme specific utilities with Open Props */
+.school-blue { color: var(--school-blue) !important; }
+.school-yellow { color: var(--school-yellow) !important; }
+.bg-school-blue { background-color: var(--school-blue) !important; }
+.bg-school-yellow { background-color: var(--school-yellow) !important; }
+
+/* Surface utilities */
+.surface-1 { background: var(--surface-1); }
+.surface-2 { background: var(--surface-2); }
+.surface-3 { background: var(--surface-3); }
+
+/* Enhanced focus states for accessibility */
+*:focus {
+  outline: var(--border-size-2) solid var(--school-blue);
+  outline-offset: var(--size-1);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar with Open Props */
+::-webkit-scrollbar {
+  width: var(--size-2);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--school-blue);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--school-blue-dark);
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: var(--animation-fade-in);
+}
+
+.slide-in-up {
+  animation: var(--animation-slide-in-up);
+}
+
+.bounce {
+  animation: var(--animation-bounce);
+}
+
+/* Responsive utilities with Open Props breakpoints */
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-md);
+  }
+  
+  h1 { font-size: var(--font-size-5); }
+  h2 { font-size: var(--font-size-4); }
+  h3 { font-size: var(--font-size-3); }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-sm);
+  }
+  
+  h1 { font-size: var(--font-size-4); }
+  h2 { font-size: var(--font-size-3); }
+  h3 { font-size: var(--font-size-2); }
+}
+
