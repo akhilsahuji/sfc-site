@@ -13,9 +13,6 @@ hero:
     - theme: brand
       text: About Our School
       link: /about
-    - theme: alt
-      text: Apply for Admission
-      link: /admissions/apply
 
 features:
   - icon: 🎓
