@@ -44,6 +44,17 @@ features:
     details: Parent Portal - www.sfcjhs.in | Download our mobile app from Google Play Store
 ---
 
+<HeroSection 
+  title="St. Francis Convent Inter College"
+  subtitle="Excellence in Education Since 1894 - Nurturing Minds, Building Futures in Jhansi"
+  image="/images/logo.png"
+  imageAlt="St. Francis Convent Inter College Logo"
+>
+  <template #buttons>
+    <a href="/about" class="hero-btn hero-btn-primary">About Our School</a>
+  </template>
+</HeroSection>
+
 ## 🏆 Outstanding Board Results 2024
 We are proud to announce that our students have achieved **100% pass rate** in both ICSE and ISC examinations with exceptional distinctions.
 
