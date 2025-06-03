@@ -185,7 +185,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--gradient-19);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0.6;
 }
 
@@ -231,10 +231,10 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--surface-1);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(var(--size-3));
-  border: var(--border-size-1) solid var(--surface-3);
-  color: var(--text-1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #333;
   width: var(--size-8);
   height: var(--size-8);
   border-radius: var(--radius-round);
@@ -245,13 +245,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-nav:hover {
-  background: var(--surface-2);
+  background: rgba(255, 255, 255, 1);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: var(--shadow-4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-nav:active {
@@ -279,20 +279,20 @@ export default {
 .carousel-indicator {
   width: var(--size-10);
   height: var(--size-7);
-  border: var(--border-size-2) solid var(--surface-1);
+  border: 2px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--animation-duration-fast-2) var(--ease-3);
-  background: var(--surface-1);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(var(--size-2));
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-1);
+  color: #fff;
   font-size: var(--font-size-0);
   font-weight: var(--font-weight-6);
-  box-shadow: var(--shadow-2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-indicator img {
@@ -302,18 +302,18 @@ export default {
 }
 
 .carousel-indicator.active {
-  border-color: var(--brand);
-  background: var(--brand);
-  color: var(--gray-0);
-  box-shadow: var(--shadow-3);
+  border-color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.1);
 }
 
 .carousel-indicator:hover {
-  border-color: var(--brand);
-  background: var(--surface-2);
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
   transform: scale(1.05);
-  box-shadow: var(--shadow-3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Design with Open Props */
