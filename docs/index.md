@@ -14,40 +14,22 @@ title: Home
 #       text: About Our School
 #       link: /about
 
-carouselHero:
+galleria:
   slides:
-    - image: '/images/logo.png'
+    - image: '/images/pictues/carousel-01.jpg'
       title: 'St. Francis Convent Inter College'
-      description: 'Excellence in Education Since 1894 - Nurturing Minds, Building Futures in Jhansi'
-      buttons:
-        - text: 'About Our School'
-          href: '/about'
-          variant: 'primary'
-        - text: 'Admissions'
-          href: '/admissions'
-          variant: 'secondary'
+      subtitle: 'Excellence in Education Since 1894 - Nurturing Minds, Building Futures in Jhansi'
     - image: '/images/students-studying.jpg'
       title: 'Outstanding Academic Results'
-      description: '100% pass rate in ICSE and ISC examinations with exceptional distinctions'
-      buttons:
-        - text: 'View Results'
-          href: '/academics'
-          variant: 'primary'
+      subtitle: '100% pass rate in ICSE and ISC examinations with exceptional distinctions'
     - image: '/images/campus-life.jpg'
       title: 'Admissions Open 2024-25'
-      description: 'Applications now being accepted for all classes. Limited seats available with merit-based selection.'
-      buttons:
-        - text: 'Apply Now'
-          href: '/admissions'
-          variant: 'primary'
-        - text: 'Contact Us'
-          href: '/contact'
-          variant: 'secondary'
+      subtitle: 'Applications now being accepted for all classes. Limited seats available with merit-based selection.'
   autoplay: true
-  autoplayInterval: 5000
+  autoplayInterval: 6000
   showNavigation: true
-  showIndicators: true
-  height: '70vh'
+  showDots: true
+  height: '80vh'
 
 # features:
 #   - icon: 🎓
@@ -79,14 +61,16 @@ carouselHero:
 #     details: Parent Portal - www.sfcjhs.in | Download our mobile app from Google Play Store
 ---
 
-<CarouselHero 
-  :slides="$frontmatter.carouselHero.slides"
-  :autoplay="$frontmatter.carouselHero.autoplay"
-  :autoplayInterval="$frontmatter.carouselHero.autoplayInterval"
-  :showNavigation="$frontmatter.carouselHero.showNavigation"
-  :showIndicators="$frontmatter.carouselHero.showIndicators"
-  :height="$frontmatter.carouselHero.height"
+<Galleria 
+  :slides="$frontmatter.galleria.slides"
+  :autoplay="$frontmatter.galleria.autoplay"
+  :autoplayInterval="$frontmatter.galleria.autoplayInterval"
+  :showNavigation="$frontmatter.galleria.showNavigation"
+  :showDots="$frontmatter.galleria.showDots"
+  :height="$frontmatter.galleria.height"
 />
+
+<DailyQuote />
 
 ## 🏆 Outstanding Board Results 2024
 We are proud to announce that our students have achieved **100% pass rate** in both ICSE and ISC examinations with exceptional distinctions.
@@ -123,15 +107,6 @@ Our beautiful campus provides an ideal learning environment with modern faciliti
 - [Faculty & Staff](/staff) - Meet our dedicated teaching team
 - [Photo Gallery](/gallery) - Visual glimpses of school life and events
 - [Contact Us](/contact) - Get in touch with our admissions office
-
-<CarouselHero 
-  :slides="$frontmatter.carouselHero.slides"
-  :autoplay="$frontmatter.carouselHero.autoplay"
-  :autoplayInterval="$frontmatter.carouselHero.autoplayInterval"
-  :showNavigation="$frontmatter.carouselHero.showNavigation"
-  :showIndicators="$frontmatter.carouselHero.showIndicators"
-  :height="$frontmatter.carouselHero.height"
-/>
 
 
 

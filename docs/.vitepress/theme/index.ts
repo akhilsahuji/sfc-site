@@ -6,6 +6,8 @@ import './style.css'
 
 // Import custom components
 import CarouselHero from './components/CarouselHero.vue'
+import Galleria from './components/Galleria.vue'
+import DailyQuote from './components/DailyQuote.vue'
 import AnnouncementBanner from './components/AnnouncementBanner.vue'
 import ContactInfo from './components/ContactInfo.vue'
 import QuickLinks from './components/QuickLinks.vue'
@@ -23,6 +25,8 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // Register custom components globally
     app.component('CarouselHero', CarouselHero)
+    app.component('Galleria', Galleria)
+    app.component('DailyQuote', DailyQuote)
     app.component('AnnouncementBanner', AnnouncementBanner)
     app.component('ContactInfo', ContactInfo)
     app.component('QuickLinks', QuickLinks)
