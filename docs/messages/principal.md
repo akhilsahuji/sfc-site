@@ -1,6 +1,6 @@
 # Principal's Message
 
-![Principal](/images/principal.jpg)
+![Principal](/images/Principal_Photo.jpg)
 
 ## Dear Students, Parents, and Well-wishers
 
