@@ -1,3 +1,5 @@
+
+![Mary Ward](/images/foundress/mary-ward1.jpg)
 ## OUR FOUNDRESS
 
 **“There is no such difference between men and women that women may not do great things.”**
@@ -17,6 +19,7 @@ Despite the many hurdles in the way of obtaining the approbation of her Institut
 The years of waiting and uncertainty took its toll on Mary’s health. In 1640 she returned to England where a civil war was raging. She and her companions sought refuge in Heworth, a village outside York. There she spent the last months of her life and on 30th January 1645 she breathed her last, pronouncing the name of Jesus three times.
 
 Mary Ward is buried in the cemetery of the Anglican Church, Osbaldwick and her grave stone is still kept inside the church which bears the following inscription: 
+![Mary Ward](/images/foundress/tomb-stone-of-Mary-Ward.jpg)
 
 **"To love the poor Persevere in the same, Live, die and rise with them Was all the aim of Mary Ward Who having lived 60 years and 8 days Died on 30th January 1645."**
 

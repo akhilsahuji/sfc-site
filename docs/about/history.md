@@ -1,6 +1,6 @@
 # History of St. Francis Convent Inter College
 
-![Historical Building](/images/historical-building.jpg)
+![ First Facility: a Train Car](/images/history/Bogie.jpg)
 
 ## Foundation and Early Years (1894-1913)
 
@@ -9,6 +9,9 @@ On **October 13, 1894**, St. Mary J. Patrick Brophy I.B.V.M. of Tara Hall Simla 
 
 ### Construction Phase (1895-1897)
 Between 1895 and 1897, a building was erected on the granted site, with proprietorship rights carefully reserved. The vision was to create an institution that would serve the educational needs of the British Army families residing in Jhansi.
+
+![ Old Building](/images/history/Old-Convent-School.jpg)
+
 
 ### School Opening (1898)
 **St. Francis Convent School** was finally opened in **1898** and entrusted to Sisters Patricia and Teresa of the Institute of the Blessed Virgin Mary. The school's mission was to provide quality education to the children of British Army personnel stationed in Jhansi.
