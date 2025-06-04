@@ -1,6 +1,6 @@
 # Our Mission & Vision
 
-![Mission Vision](/images/mission-vision.jpg)
+![Mission Vision](/images/Our_Mission_Our_Vision.jpg)
 
 ## Our Mission
 
