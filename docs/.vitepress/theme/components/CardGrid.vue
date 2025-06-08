@@ -74,179 +74,229 @@ export default {
 </script>
 
 <style scoped>
+@import "open-props/style";
+
 .card-grid-section {
-  padding: 80px 0;
+  padding-block: var(--size-10);
+  padding-inline: var(--size-4);
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  max-width: var(--size-content-3);
+  margin-inline: auto;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-block-end: var(--size-8);
 }
 
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: clamp(var(--font-size-4), 3vw, var(--font-size-6));
+  font-weight: var(--font-weight-7);
+  margin-block-end: var(--size-4);
+  line-height: var(--font-lineheight-1);
+  font-family: var(--font-serif);
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(var(--font-size-2), 1.5vw, var(--font-size-3));
   opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: var(--size-content-1);
+  margin-inline: auto;
+  line-height: var(--font-lineheight-3);
 }
 
 .card-grid {
   display: grid;
-  gap: 30px;
+  gap: var(--size-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
 }
 
-.cols-1 { grid-template-columns: 1fr; }
-.cols-2 { grid-template-columns: repeat(2, 1fr); }
-.cols-3 { grid-template-columns: repeat(3, 1fr); }
-.cols-4 { grid-template-columns: repeat(4, 1fr); }
+/* Specific column layouts for larger screens */
+@media (width >= 768px) {
+  .cols-1 { grid-template-columns: 1fr; }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+}
 
 .card {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--surface-1);
+  border-radius: var(--radius-3);
+  padding: var(--size-6);
+  box-shadow: var(--shadow-2);
+  transition: 
+    transform var(--animation-fade-in) var(--ease-3),
+    box-shadow var(--animation-fade-in) var(--ease-3);
   text-align: center;
+  border: var(--border-size-1) solid var(--surface-3);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(calc(-1 * var(--size-1)));
+  box-shadow: var(--shadow-4);
 }
 
 .card-icon {
-  margin-bottom: 20px;
+  margin-block-end: var(--size-4);
 }
 
 .card-icon i {
-  font-size: 3rem;
-  color: #2c5aa0;
+  font-size: var(--font-size-6);
+  color: var(--blue-6);
 }
 
 .card-image {
-  margin-bottom: 20px;
+  margin-block-end: var(--size-4);
 }
 
 .card-image img {
   width: 100%;
-  height: 200px;
+  height: var(--size-12);
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-2);
+  aspect-ratio: var(--ratio-landscape);
 }
 
 .card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #333;
+  font-size: clamp(var(--font-size-2), 1.5vw, var(--font-size-3));
+  font-weight: var(--font-weight-6);
+  margin-block-end: var(--size-3);
+  color: var(--text-1);
+  font-family: var(--font-serif);
 }
 
 .card-description {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: var(--text-2);
+  line-height: var(--font-lineheight-3);
+  margin-block-end: var(--size-4);
 }
 
 .card-link {
-  display: inline-block;
-  color: #2c5aa0;
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue-6);
   text-decoration: none;
-  font-weight: 500;
-  padding: 10px 20px;
-  border: 2px solid #2c5aa0;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  font-weight: var(--font-weight-5);
+  padding: var(--size-2) var(--size-4);
+  border: var(--border-size-2) solid var(--blue-6);
+  border-radius: var(--radius-2);
+  transition: all var(--animation-fade-in) var(--ease-3);
+  font-size: var(--font-size-1);
 }
 
 .card-link:hover {
-  background: #2c5aa0;
-  color: white;
+  background: var(--blue-6);
+  color: var(--gray-0);
+  transform: translateY(calc(-1 * var(--size-1)));
 }
 
 /* Background Variants */
 .bg-white {
-  background: #ffffff;
-  color: #333;
+  background: var(--gray-0);
+  color: var(--text-1);
 }
 
 .bg-light {
-  background: #f8f9fa;
-  color: #333;
+  background: var(--surface-1);
+  color: var(--text-1);
 }
 
 .bg-blue {
-  background: #2c5aa0;
-  color: white;
+  background: var(--blue-6);
+  color: var(--gray-0);
 }
 
 .bg-blue .section-title {
-  color: #ffd700;
+  color: var(--yellow-3);
 }
 
 .bg-blue .card {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  backdrop-filter: blur(10px);
+  background: var(--surface-1-hsl) / 0.1;
+  color: var(--gray-0);
+  backdrop-filter: blur(var(--size-1));
+  border-color: var(--surface-3-hsl) / 0.3;
 }
 
 .bg-blue .card-title {
-  color: #ffd700;
+  color: var(--yellow-3);
 }
 
 .bg-blue .card-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--gray-0-hsl) / 0.8;
 }
 
 .bg-blue .card-link {
-  color: #ffd700;
-  border-color: #ffd700;
+  color: var(--yellow-3);
+  border-color: var(--yellow-3);
 }
 
 .bg-blue .card-link:hover {
-  background: #ffd700;
-  color: #2c5aa0;
+  background: var(--yellow-3);
+  color: var(--blue-6);
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (width <= 768px) {
   .card-grid-section {
-    padding: 60px 0;
+    padding-block: var(--size-8);
+    padding-inline: var(--size-3);
   }
   
-  .cols-2,
-  .cols-3,
-  .cols-4 {
-    grid-template-columns: 1fr;
-  }
-  
-  .section-title {
-    font-size: 2rem;
+  .card-grid {
+    gap: var(--size-4);
   }
   
   .card {
-    padding: 25px;
+    padding: var(--size-4);
   }
 }
 
-@media (max-width: 480px) {
-  .card {
-    padding: 20px;
+@media (width <= 480px) {
+  .card-grid-section {
+    padding-inline: var(--size-2);
   }
   
-  .section-title {
-    font-size: 1.8rem;
+  .card {
+    padding: var(--size-3);
+  }
+  
+  .card-grid {
+    gap: var(--size-3);
+  }
+}
+
+/* Animation for cards */
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: card-fade-in var(--animation-fade-in) var(--ease-3) both;
+  }
+  
+  .card:nth-child(2) { animation-delay: 0.1s; }
+  .card:nth-child(3) { animation-delay: 0.2s; }
+  .card:nth-child(4) { animation-delay: 0.3s; }
+}
+
+@keyframes card-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--size-3));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .bg-white {
+    background: var(--surface-1);
+  }
+  
+  .bg-light {
+    background: var(--surface-2);
   }
 }
 </style> 

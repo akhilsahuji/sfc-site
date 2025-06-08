@@ -1,0 +1,276 @@
+/* Enhanced VitePress Navigation with Smart Responsive Behavior */
+
+/* Add overflow menu support to default VitePress nav */
+.VPNavBar .VPNavBarMenuGroup {
+  position: relative;
+}
+
+/* Create overflow menu container */
+.VPNavBar .nav-overflow-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 250px;
+  background: var(--vp-c-bg-elv);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  box-shadow: var(--vp-shadow-2);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.VPNavBar .nav-overflow-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Overflow menu trigger button */
+.VPNavBar .nav-overflow-trigger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.VPNavBar .nav-overflow-trigger:hover {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-brand-1);
+}
+
+/* Overflow menu items */
+.VPNavBar .nav-overflow-item {
+  padding: 0 4px;
+}
+
+.VPNavBar .nav-overflow-link {
+  display: block;
+  padding: 8px 16px;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.VPNavBar .nav-overflow-link:hover {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-brand-1);
+}
+
+.VPNavBar .nav-overflow-group {
+  padding: 12px 16px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  margin-bottom: 4px;
+}
+
+.VPNavBar .nav-overflow-sublink {
+  display: block;
+  padding: 6px 32px;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.VPNavBar .nav-overflow-sublink:hover {
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-brand-1);
+}
+
+/* Enhanced hamburger for mobile */
+.VPNavBarHamburger {
+  position: relative;
+  z-index: 1001;
+}
+
+/* Priority navigation items (always visible on larger screens) */
+@media (min-width: 768px) {
+  /* Hide lower priority items and show overflow menu when needed */
+  .VPNavBar .VPNavBarMenuGroup .VPNavBarMenuLink:nth-child(n+5) {
+    display: none;
+  }
+  
+  .VPNavBar .nav-overflow-trigger {
+    display: flex;
+  }
+  
+  /* Ensure priority items are always visible */
+  .VPNavBar .VPNavBarMenuGroup .VPNavBarMenuLink:nth-child(-n+4) {
+    display: flex !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Show fewer items on tablets */
+  .VPNavBar .VPNavBarMenuGroup .VPNavBarMenuLink:nth-child(n+4) {
+    display: none;
+  }
+  
+  /* Adjust spacing for tighter layout */
+  .VPNavBar .VPNavBarMenuLink {
+    padding: 0 8px;
+    font-size: 14px;
+  }
+}
+
+/* Large desktop - show more items */
+@media (min-width: 1200px) {
+  .VPNavBar .VPNavBarMenuGroup .VPNavBarMenuLink:nth-child(-n+6) {
+    display: flex !important;
+  }
+  
+  .VPNavBar .VPNavBarMenuGroup .VPNavBarMenuLink:nth-child(n+7) {
+    display: none;
+  }
+}
+
+/* Mobile - keep default hamburger behavior */
+@media (max-width: 767px) {
+  .VPNavBar .nav-overflow-trigger {
+    display: none !important;
+  }
+  
+  .VPNavBar .VPNavBarMenuGroup {
+    display: none;
+  }
+  
+  /* Enhanced mobile menu styling */
+  .VPNavScreenMenu {
+    background: var(--vp-c-bg);
+    border-top: 1px solid var(--vp-c-divider);
+  }
+  
+  .VPNavScreenMenuLink {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--vp-c-divider-light);
+    font-size: 16px;
+    transition: background-color 0.2s;
+  }
+  
+  .VPNavScreenMenuLink:hover {
+    background: var(--vp-c-bg-mute);
+  }
+  
+  /* Better mobile dropdown styling */
+  .VPNavScreenMenuGroup {
+    border-bottom: 1px solid var(--vp-c-divider);
+  }
+  
+  .VPNavScreenMenuGroupLink {
+    padding: 12px 24px 12px 40px;
+    font-size: 15px;
+    color: var(--vp-c-text-2);
+  }
+}
+
+/* Enhanced focus states for accessibility */
+.VPNavBar .nav-overflow-trigger:focus-visible,
+.VPNavBar .nav-overflow-link:focus-visible,
+.VPNavBar .nav-overflow-sublink:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all nav elements */
+.VPNavBar .VPNavBarMenuLink,
+.VPNavBar .VPNavBarMenuGroup,
+.VPNavBar .nav-overflow-trigger {
+  transition: all 0.2s ease;
+}
+
+/* Dark mode adjustments */
+.dark .VPNavBar .nav-overflow-menu {
+  background: var(--vp-c-bg-elv);
+  border-color: var(--vp-c-divider);
+  box-shadow: var(--vp-shadow-2);
+}
+
+/* Better visual hierarchy */
+.VPNavBar .VPNavBarTitle {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+/* Ensure proper spacing and alignment */
+.VPNavBar .VPNavBarContent {
+  height: auto;
+  min-height: 55px;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .VPNavBar .VPNavBarContent {
+    padding: 0 32px;
+  }
+}
+
+/* Loading states */
+.VPNavBar .nav-overflow-menu.loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Animation for menu items */
+@media (prefers-reduced-motion: no-preference) {
+  .VPNavBar .nav-overflow-item {
+    animation: fadeInUp 0.2s ease forwards;
+  }
+  
+  .VPNavBar .nav-overflow-item:nth-child(2) { animation-delay: 0.05s; }
+  .VPNavBar .nav-overflow-item:nth-child(3) { animation-delay: 0.1s; }
+  .VPNavBar .nav-overflow-item:nth-child(4) { animation-delay: 0.15s; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .VPNavBar * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .VPNavBar .nav-overflow-menu {
+    border-width: 2px;
+  }
+  
+  .VPNavBar .nav-overflow-trigger:focus-visible {
+    outline-width: 3px;
+  }
+} 

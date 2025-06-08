@@ -36,73 +36,157 @@ export default {
 </script>
 
 <style scoped>
-/* Footer */
+@import "open-props/style";
+
 .footer {
-  background: #2c5aa0;
-  color: white;
-  margin-top: auto;
+  background: var(--blue-6);
+  color: var(--gray-0);
+  margin-block-start: auto;
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px 20px;
+  max-width: var(--size-content-3);
+  margin-inline: auto;
+  padding-block: var(--size-8) var(--size-4);
+  padding-inline: var(--size-4);
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: var(--size-6);
+  margin-block-end: var(--size-6);
 }
 
 .footer-section h3 {
-  color: #ffd700;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
+  color: var(--yellow-3);
+  margin-block-end: var(--size-3);
+  font-size: clamp(var(--font-size-2), 1.5vw, var(--font-size-3));
+  font-weight: var(--font-weight-6);
+  font-family: var(--font-serif);
 }
 
 .footer-section h4 {
-  color: #ffd700;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  color: var(--yellow-3);
+  margin-block-end: var(--size-2);
+  font-size: clamp(var(--font-size-1), 1.2vw, var(--font-size-2));
+  font-weight: var(--font-weight-5);
 }
 
 .footer-section p {
-  margin-bottom: 8px;
-  color: #ddd;
+  margin-block-end: var(--size-2);
+  color: var(--gray-2);
+  line-height: var(--font-lineheight-3);
+  font-size: var(--font-size-1);
 }
 
 .footer-section ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 8px;
+  margin-block-end: var(--size-2);
 }
 
 .footer-section ul li a {
-  color: #ddd;
+  color: var(--gray-2);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--animation-fade-in) var(--ease-3);
+  font-size: var(--font-size-1);
+  display: inline-block;
+  position: relative;
 }
 
 .footer-section ul li a:hover {
-  color: #ffd700;
+  color: var(--yellow-3);
+  transform: translateX(var(--size-1));
+}
+
+.footer-section ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow-3);
+  transition: width var(--animation-fade-in) var(--ease-3);
+}
+
+.footer-section ul li a:hover::after {
+  width: 100%;
 }
 
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #4a6bb3;
-  color: #ddd;
+  padding-block-start: var(--size-4);
+  border-block-start: var(--border-size-1) solid var(--blue-5);
+  color: var(--gray-2);
+}
+
+.footer-bottom p {
+  font-size: var(--font-size-0);
+  margin: 0;
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
+@media (width <= 768px) {
+  .footer-container {
+    padding-inline: var(--size-3);
+  }
+  
+  .footer-content {
+    gap: var(--size-4);
+    text-align: center;
+  }
+}
+
+@media (width <= 480px) {
+  .footer-container {
+    padding-inline: var(--size-2);
+  }
+  
   .footer-content {
     grid-template-columns: 1fr;
+    gap: var(--size-3);
+  }
+  
+  .footer-section {
     text-align: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: var(--blue-8);
+  }
+  
+  .footer-bottom {
+    border-block-start-color: var(--blue-7);
+  }
+}
+
+/* Animation for footer sections */
+@media (prefers-reduced-motion: no-preference) {
+  .footer-section {
+    animation: footer-fade-in var(--animation-fade-in) var(--ease-3) both;
+  }
+  
+  .footer-section:nth-child(2) { animation-delay: 0.1s; }
+  .footer-section:nth-child(3) { animation-delay: 0.2s; }
+}
+
+@keyframes footer-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--size-2));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style> 

@@ -45,95 +45,135 @@ export default {
 </script>
 
 <style scoped>
+@import "open-props/style";
+
 .hero-section {
   position: relative;
-  min-height: 500px;
+  min-height: clamp(400px, 50vh, 600px);
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #2c5aa0 0%, #1e3a6f 100%);
+  background: linear-gradient(135deg, var(--blue-6) 0%, var(--blue-8) 100%);
   background-size: cover;
   background-position: center;
-  color: white;
+  color: var(--gray-0);
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(44, 90, 160, 0.8);
+  inset: 0;
+  background: var(--blue-6-hsl) / 0.8;
 }
 
 .hero-container {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  max-width: var(--size-content-3);
+  margin-inline: auto;
+  padding-block: var(--size-8);
+  padding-inline: var(--size-4);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: var(--size-8);
   align-items: center;
 }
 
 .hero-content {
-  z-index: 2;
+  z-index: var(--layer-2);
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
+  font-size: clamp(var(--font-size-4), 4vw, var(--font-size-8));
+  font-weight: var(--font-weight-7);
+  margin-block-end: var(--size-4);
+  line-height: var(--font-lineheight-1);
+  font-family: var(--font-serif);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  font-size: clamp(var(--font-size-2), 2vw, var(--font-size-4));
+  margin-block-end: var(--size-6);
+  line-height: var(--font-lineheight-3);
   opacity: 0.9;
+  max-width: var(--size-content-1);
 }
 
 .hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: var(--size-3);
   flex-wrap: wrap;
 }
 
 .hero-image {
-  z-index: 2;
+  z-index: var(--layer-2);
+  justify-self: center;
 }
 
 .hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: var(--size-15);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-6);
+  aspect-ratio: var(--ratio-golden);
+  object-fit: cover;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design using OpenProps breakpoints */
+@media (width <= 768px) {
   .hero-container {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 30px;
+    gap: var(--size-6);
+    padding-inline: var(--size-3);
   }
   
-  .hero-title {
-    font-size: 2.5rem;
+  .hero-image {
+    order: -1;
   }
   
-  .hero-subtitle {
-    font-size: 1.1rem;
+  .hero-image img {
+    max-width: var(--size-13);
   }
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+@media (width <= 480px) {
+  .hero-container {
+    gap: var(--size-4);
+    padding-inline: var(--size-2);
   }
   
-  .hero-subtitle {
-    font-size: 1rem;
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--size-2);
+    width: 100%;
+  }
+}
+
+/* Enhanced animation and interaction */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-content {
+    animation: hero-fade-up var(--animation-fade-in) var(--ease-3);
+  }
+  
+  .hero-image {
+    animation: hero-fade-up var(--animation-fade-in) var(--ease-3) 0.2s both;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--size-3));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-overlay {
+    background: var(--blue-8-hsl) / 0.9;
   }
 }
 </style> 

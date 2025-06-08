@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "St. Francis Convent Inter College",
+  title: " ",
   description:
     "Excellence in education since our establishment - St. Francis Convent Inter College, Jhansi",
 
@@ -15,15 +15,21 @@ export default defineConfig({
         crossorigin: "anonymous",
       },
     ],
+    [
+      "script",
+      {
+        src: "/scripts/enhanced-nav.js",
+        defer: "true",
+      },
+    ],
   ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
 
     // Logo configuration
-    logo: "/images/logo.png",
+    // logo: "/images/logo.png",
 
-    siteTitle: "SFCI",
 
     // Streamlined navigation with main items + More dropdown
     nav: [
@@ -80,10 +86,10 @@ export default defineConfig({
       {
         text: "Resources",
         items: [
-          { text: "Notice Board", link: "/notices" },
-          { text: "Circulars", link: "/circulars" },
-          { text: "Syllabus", link: "/notices/syllabus" },
-          { text: "Bulletin Board", link: "/gallery/bulletin" },
+          { text: "Notice Board", link: "resources/notices" },
+          { text: "Circulars", link: "resources/circulars" },
+          { text: "Syllabus", link: "resources/syllabus" },
+          { text: "Bulletin Board", link: "resources/bulletin" },
         ],
       },
       {

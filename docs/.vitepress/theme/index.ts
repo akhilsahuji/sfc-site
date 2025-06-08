@@ -19,7 +19,6 @@ import HeroSection from './components/HeroSection.vue'
 import Button from './components/Button.vue'
 import Footer from './components/Footer.vue'
 import ResponsiveNavigation from './components/ResponsiveNavigation.vue'
-import SchoolHeader from './components/SchoolHeader.vue'
 
 export default {
   extends: DefaultTheme,
@@ -40,7 +39,6 @@ export default {
     app.component('Button', Button)
     app.component('Footer', Footer)
     app.component('ResponsiveNavigation', ResponsiveNavigation)
-    app.component('SchoolHeader', SchoolHeader)
   }
 } satisfies Theme
 
