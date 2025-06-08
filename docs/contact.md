@@ -1,6 +1,6 @@
 # Contact Us
 
-![Contact Us](/images/contact.jpg)
+![Contact Us](/images/contact.png)
 
 ## Get in Touch
 
