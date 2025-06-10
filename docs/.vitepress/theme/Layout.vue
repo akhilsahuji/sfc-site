@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
+import ModernLayout from './components/ModernLayout.vue'
 </script>
 
 <template>
-  <div class="custom-layout-wrapper">
-    <!-- Default VitePress Layout with enhanced navigation -->
-    <DefaultTheme.Layout />
-  </div>
+  <ModernLayout>
+    <Content />
+  </ModernLayout>
 </template>
-
-<style>
-.custom-layout-wrapper {
-  min-height: 100vh;
-}
-</style>

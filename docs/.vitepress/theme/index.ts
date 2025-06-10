@@ -1,10 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
 import type { Theme } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
-import CustomLayout from './Layout.vue'
+import Layout from './Layout.vue'
 import './style.css'
 
 // Import custom components
+import ModernLayout from './components/ModernLayout.vue'
+import ModernHero from './components/ModernHero.vue'
+import ModernFeatures from './components/ModernFeatures.vue'
 import CarouselHero from './components/CarouselHero.vue'
 import Galleria from './components/Galleria.vue'
 import DailyQuote from './components/DailyQuote.vue'
@@ -18,13 +20,14 @@ import ContentSection from './components/ContentSection.vue'
 import HeroSection from './components/HeroSection.vue'
 import Button from './components/Button.vue'
 import Footer from './components/Footer.vue'
-import ResponsiveNavigation from './components/ResponsiveNavigation.vue'
 
 export default {
-  extends: DefaultTheme,
-  Layout: CustomLayout, // Use custom layout that wraps default theme
+  Layout,
   enhanceApp({ app, router, siteData }) {
     // Register custom components globally
+    app.component('ModernLayout', ModernLayout)
+    app.component('ModernHero', ModernHero)
+    app.component('ModernFeatures', ModernFeatures)
     app.component('CarouselHero', CarouselHero)
     app.component('Galleria', Galleria)
     app.component('DailyQuote', DailyQuote)
@@ -38,7 +41,5 @@ export default {
     app.component('HeroSection', HeroSection)
     app.component('Button', Button)
     app.component('Footer', Footer)
-    app.component('ResponsiveNavigation', ResponsiveNavigation)
   }
 } satisfies Theme
-

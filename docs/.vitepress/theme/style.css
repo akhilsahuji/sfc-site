@@ -1,433 +1,233 @@
 /**
- * Open Props Design System
- * Modern CSS design tokens for consistent styling
+ * St. Francis Convent Inter College - Modern Custom Theme
+ * Built with Open Props and modern design principles
  */
 
-/* Import Open Props from CDN - Core design tokens */
+/* Import Open Props and FontAwesome */
 @import url('https://unpkg.com/open-props');
 @import url('https://unpkg.com/open-props/normalize.min.css');
-
-/* Import FontAwesome Icons */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/* Import Enhanced Navigation Styles */
-@import './styles/enhanced-nav.css';
-
-/**
- * School Brand Colors with Open Props Integration
- * -------------------------------------------------------------------------- */
-
+/* Custom CSS Variables */
 :root {
-  /* School Brand Colors */
-  --school-blue-hsl: 218 75% 40%;
-  --school-blue: hsl(var(--school-blue-hsl));
-  --school-blue-light: hsl(218 70% 50%);
-  --school-blue-lighter: hsl(218 65% 60%);
-  --school-blue-lightest: hsl(218 60% 70%);
-  --school-blue-dark: hsl(218 80% 30%);
-  --school-blue-darker: hsl(218 85% 20%);
+  /* Brand Colors */
+  --primary-blue: #1e3a8a;
+  --primary-blue-light: #3b82f6;
+  --primary-blue-lighter: #60a5fa;
+  --accent-gold: #fbbf24;
+  --accent-gold-dark: #f59e0b;
   
-  --school-yellow: var(--yellow-5);
-  --school-accent: var(--orange-5);
+  /* Semantic Colors */
+  --text-primary: #1f2937;
+  --text-secondary: #64748b;
+  --text-muted: #9ca3af;
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-accent: #e2e8f0;
   
-  /* VitePress Brand Integration */
-  --vp-c-brand: var(--school-blue);
-  --vp-c-brand-light: var(--school-blue-light);
-  --vp-c-brand-lighter: var(--school-blue-lighter);
-  --vp-c-brand-lightest: var(--school-blue-lightest);
-  --vp-c-brand-dark: var(--school-blue-dark);
-  --vp-c-brand-darker: var(--school-blue-darker);
-  --vp-c-brand-dimm: hsl(var(--school-blue-hsl) / 0.08);
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   
-  /* Open Props Enhanced Colors */
-  --surface-1: var(--gray-0);
-  --surface-2: var(--gray-1);
-  --surface-3: var(--gray-2);
-  --surface-shadow: var(--shadow-2);
-  --surface-glass: rgba(255, 255, 255, 0.1);
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
   
-  /* Typography with Open Props */
-  --font-family-primary: var(--font-sans);
-  --font-family-heading: var(--font-sans);
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
   
-  /* Spacing Scale */
-  --space-xs: var(--size-1);
-  --space-sm: var(--size-2);
-  --space-md: var(--size-3);
-  --space-lg: var(--size-5);
-  --space-xl: var(--size-7);
-  --space-2xl: var(--size-9);
-  
-  /* Border Radius Scale */
-  --radius-sm: var(--radius-2);
-  --radius-md: var(--radius-3);
-  --radius-lg: var(--radius-4);
-  --radius-xl: var(--radius-5);
-  
-  /* Enhanced Brand Variables */
-  --brand: var(--school-blue);
-  --brand-light: var(--school-blue-light);
-  --brand-dark: var(--school-blue-dark);
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
+  /* Typography */
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/**
- * Component: Button with Open Props
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-button-brand-border: var(--school-blue-light);
-  --vp-button-brand-text: var(--gray-0);
-  --vp-button-brand-bg: var(--school-blue);
-  --vp-button-brand-hover-border: var(--school-blue-light);
-  --vp-button-brand-hover-text: var(--gray-0);
-  --vp-button-brand-hover-bg: var(--school-blue-light);
-  --vp-button-brand-active-border: var(--school-blue-light);
-  --vp-button-brand-active-text: var(--gray-0);
-  --vp-button-brand-active-bg: var(--school-blue);
+/* Global Styles */
+* {
+  box-sizing: border-box;
 }
 
-/**
- * Component: Home Hero with Open Props Gradients
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: var(--gradient-8);
-
-  --vp-home-hero-image-background-image: var(--gradient-12);
-  --vp-home-hero-image-filter: blur(var(--size-8));
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(var(--size-10));
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(var(--size-12));
-  }
-}
-
-/**
- * Component: Custom Block with Open Props
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-custom-block-tip-border: var(--school-blue);
-  --vp-custom-block-tip-text: var(--school-blue-darker);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
-}
-
-/**
- * Typography System with Open Props
- * -------------------------------------------------------------------------- */
-
-body {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-1);
-  line-height: var(--font-lineheight-3);
-  color: var(--gray-9);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-7);
-  line-height: var(--font-lineheight-1);
-  margin-block: var(--space-md) var(--space-sm);
-}
-
-h1 { font-size: var(--font-size-6); }
-h2 { font-size: var(--font-size-5); }
-h3 { font-size: var(--font-size-4); }
-h4 { font-size: var(--font-size-3); }
-h5 { font-size: var(--font-size-2); }
-h6 { font-size: var(--font-size-1); }
-
-/**
- * Enhanced Component Styles with Open Props
- * -------------------------------------------------------------------------- */
-
-/* Card Components */
-.card {
-  background: var(--surface-1);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-2);
-  padding: var(--space-lg);
-  transition: var(--animation-fade-in);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-4);
-  transform: translateY(var(--size-1));
-}
-
-/* Button Variants */
-.btn {
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-6);
-  transition: var(--animation-fade-in);
-  border: var(--border-size-1) solid transparent;
-}
-
-.btn-primary {
-  background: var(--school-blue);
-  color: var(--gray-0);
-  border-color: var(--school-blue);
-}
-
-.btn-primary:hover {
-  background: var(--school-blue-light);
-  border-color: var(--school-blue-light);
-}
-
-.btn-secondary {
-  background: var(--gray-2);
-  color: var(--gray-9);
-  border-color: var(--gray-3);
-}
-
-.btn-secondary:hover {
-  background: var(--gray-3);
-  border-color: var(--gray-4);
-}
-
-/**
- * Global Styles with Open Props
- * -------------------------------------------------------------------------- */
-
-/* Remove default margin from markdown content in components */
-.content-section .content-body > *:first-child {
-  margin-top: 0 !important;
-}
-
-.content-section .content-body > *:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* Better spacing for lists in content sections */
-.content-section ul,
-.content-section ol {
-  margin: var(--space-md) 0;
-  padding-left: var(--space-lg);
-}
-
-.content-section li {
-  margin: var(--space-sm) 0;
-}
-
-/* Responsive iframe videos */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  background: var(--gray-9);
-  border-radius: var(--radius-lg);
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* School theme specific utilities with Open Props */
-.school-blue { color: var(--school-blue) !important; }
-.school-yellow { color: var(--school-yellow) !important; }
-.bg-school-blue { background-color: var(--school-blue) !important; }
-.bg-school-yellow { background-color: var(--school-yellow) !important; }
-
-/* Surface utilities */
-.surface-1 { background: var(--surface-1); }
-.surface-2 { background: var(--surface-2); }
-.surface-3 { background: var(--surface-3); }
-
-/* Enhanced focus states for accessibility */
-*:focus {
-  outline: var(--border-size-2) solid var(--school-blue);
-  outline-offset: var(--size-1);
-}
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar with Open Props */
-::-webkit-scrollbar {
-  width: var(--size-2);
-}
-
-::-webkit-scrollbar-track {
-  background: var(--gray-2);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--school-blue);
-  border-radius: var(--radius-sm);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--school-blue-dark);
-}
-
-/* Animation utilities */
-.fade-in {
-  animation: var(--animation-fade-in);
-}
-
-.slide-in-up {
-  animation: var(--animation-slide-in-up);
-}
-
-.bounce {
-  animation: var(--animation-bounce);
-}
-
-/* Responsive utilities with Open Props breakpoints */
-@media (max-width: 768px) {
-  .card {
-    padding: var(--space-md);
-  }
-  
-  h1 { font-size: var(--font-size-5); }
-  h2 { font-size: var(--font-size-4); }
-  h3 { font-size: var(--font-size-3); }
-}
-
-@media (max-width: 480px) {
-  .card {
-    padding: var(--space-sm);
-  }
-  
-  h1 { font-size: var(--font-size-4); }
-  h2 { font-size: var(--font-size-3); }
-  h3 { font-size: var(--font-size-2); }
-}
-
-/**
- * Custom Responsive Navigation Styles
- * -------------------------------------------------------------------------- */
-
-/* Integration with VitePress navbar */
-.VPNavBar {
-  border-bottom: 1px solid var(--vp-c-divider);
-  background-color: var(--vp-c-bg);
-  transition: all 0.3s ease;
-}
-
-.VPNavBar.has-sidebar {
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-/* Responsive navigation specific adjustments */
-.responsive-nav {
+body {
   font-family: var(--font-family-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.responsive-nav .nav-item {
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
 }
 
-/* Enhanced hover effects */
-.responsive-nav .nav-item:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px var(--vp-c-brand-dimm);
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Active state improvements */
-.responsive-nav .nav-item.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 20px;
-  height: 2px;
-  background: var(--vp-c-brand);
-  border-radius: 1px;
-  transform: translateX(-50%);
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--primary-blue); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-accent { color: var(--accent-gold); }
+
+.bg-primary { background-color: var(--primary-blue); }
+.bg-secondary { background-color: var(--background-secondary); }
+.bg-accent { background-color: var(--background-accent); }
+
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: 16px;
+  line-height: 1;
 }
 
-/* More dropdown enhancements */
-.responsive-nav .more-dropdown-content {
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--vp-c-divider-light);
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+  color: white;
+  box-shadow: var(--shadow-md);
 }
 
-.dark .responsive-nav .more-dropdown-content {
-  background: rgba(30, 30, 30, 0.95);
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Mobile menu improvements */
-@media (max-width: 768px) {
-  .responsive-nav .nav-items-container.mobile-open {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.98);
-  }
-  
-  .dark .responsive-nav .nav-items-container.mobile-open {
-    background: rgba(20, 20, 20, 0.98);
-  }
-  
-  .responsive-nav .nav-item {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
-  .responsive-nav .nav-item:hover {
-    transform: translateX(8px);
-    box-shadow: none;
-  }
+.btn-secondary {
+  background: var(--background-primary);
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
-/* Animation improvements */
-.responsive-nav .dropdown-item {
-  position: relative;
+.btn-secondary:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+  color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Styles */
+.card {
+  background: var(--background-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
+  transition: all var(--transition-normal);
 }
 
-.responsive-nav .dropdown-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--vp-c-brand-dimm), transparent);
-  transition: left 0.5s;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
 }
 
-.responsive-nav .dropdown-item:hover::before {
-  left: 100%;
+.card-header {
+  padding: 24px 24px 0;
 }
 
-/* Improved focus states for accessibility */
-.responsive-nav .nav-item:focus,
-.responsive-nav .more-btn:focus,
-.responsive-nav .dropdown-item:focus {
-  outline: 2px solid var(--vp-c-brand);
-  outline-offset: 2px;
-  border-radius: 4px;
+.card-body {
+  padding: 24px;
 }
 
-/* Loading state animations */
+.card-footer {
+  padding: 0 24px 24px;
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.section-sm {
+  padding: 60px 0;
+}
+
+.section-lg {
+  padding: 120px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: 30px;
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -435,12 +235,139 @@ html {
   }
 }
 
-.responsive-nav .nav-item {
-  animation: fadeInUp 0.3s ease forwards;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.responsive-nav .nav-item:nth-child(1) { animation-delay: 0.1s; }
-.responsive-nav .nav-item:nth-child(2) { animation-delay: 0.2s; }
-.responsive-nav .nav-item:nth-child(3) { animation-delay: 0.3s; }
-.responsive-nav .nav-item:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-lg {
+    padding: 80px 0;
+  }
+  
+  .grid {
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+}
+
+/* VitePress Override Styles */
+.VPDoc {
+  max-width: none !important;
+}
+
+.VPContent {
+  max-width: none !important;
+}
+
+/* Hide default VitePress elements for custom theme */
+.VPNavBar,
+.VPSidebar,
+.VPFooter {
+  display: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--accent-gold);
+  color: var(--primary-blue);
+}
+
+/* Print styles */
+@media print {
+  .modern-hero,
+  .modern-footer,
+  .top-header {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+}
